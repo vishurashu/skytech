@@ -22,7 +22,8 @@
 html,
 body {
   height: auto;
-   scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  position: relative;
 }
 
 * {
@@ -57,20 +58,28 @@ h6 .heading {
   }
 }
 
-.footer_Section,
+.max-w-full {
+  max-width: 100% !important;
+}
+
+/* .footer_Section,
 .about_us,
 .projects {
   background: linear-gradient(180deg, #010101 8%, #270000 100%);
-}
+} */
 
 .spline_overlay {
   background: linear-gradient(180deg, rgba(1, 1, 1, 0) 0%, #010101 100%);
   position: absolute;
   width: 100%;
-  bottom: 0;
+  bottom: 48px;
   left: 0;
-  height: 60px;
+  height: 89px;
   z-index: 5;
+}
+
+.spline_overlay2{
+  height: 76px;
 }
 
 .services,
@@ -141,7 +150,7 @@ h6 .heading {
   right: 313px;
 }
 
-.footer_bg,
+/* .footer_bg, */
 .clients_feedback {
   backdrop-filter: blur(10px);
   background: #010101;
@@ -187,6 +196,20 @@ input {
 .promotion {
   backdrop-filter: blur(15px);
   background: #14050538;
+}
+
+/* .stat_section{
+  background-image: url('/aboutBg.png');
+} */
+
+.homeBg {
+  background-image: url('/homeWholebg.png');
+  height: 7050px;
+}
+
+.wholeBg {
+  background-image: url('/aboutWholebg.png');
+  height: 3700px;
 }
 
 @media (max-width: 1100px) {
@@ -545,6 +568,7 @@ input {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -604,10 +628,8 @@ input {
   box-shadow: 0 0 46.44px #ffa4a4, 0 0 92.88px #d20000, 0 0 250px #ffa4a4, 0 0 250px #ffa4a4, 0 0 250px #ffa4a400;
 }
 
-@media (max-width:768px){
-  .projects_showcase{
-    
-  }
+@media (max-width:768px) {
+  .projects_showcase {}
 }
 
 @media (max-width: 576px) {

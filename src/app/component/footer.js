@@ -10,7 +10,7 @@ const Footer = () => {
     const pathname = usePathname();
 
     return (
-        <div className="footer_bg ">
+        <div className="footer_bg absolute bottom-0 w-full">
             <footer className='self-stretch min-[992px]:px-15 px-10 relative overflow-hidden footer_section py-10 border-t border-white'>
                 <div className='container max-w-full '>
                     <div className='min-[1100px]:p-16 p-12 max-[576px]:p-8 bg-black/0 rounded-[40px] footer_wrapper'>
