@@ -62,6 +62,10 @@ h6 .heading {
   max-width: 100% !important;
 }
 
+.card{
+  box-shadow: 0 0 13px #00000075, inset 0 1px #e30613a1 , inset 0 -1px #e30613a1, inset 1px 0 #a4a4a4, inset -1px 0 #a4a4a4;
+}
+
 /* .footer_Section,
 .about_us,
 .projects {
@@ -204,7 +208,7 @@ input {
 
 .homeBg {
   background-image: url('/homeWholebg.png');
-  height: 7050px;
+  height: 6503px;
 }
 
 .wholeBg {

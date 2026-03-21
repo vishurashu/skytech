@@ -26,6 +26,34 @@ const page = () => {
     },
   ]
 
+  const companyAbout = [
+    {
+      number: '01',
+      title: 'Design Led, Technology Driven',
+      content: 'We believe great digital products start with thoughtful design and are powered by strong technology. Our approach combines creative thinking with modern development to build solutions that are visually compelling and technically reliable.'
+    },
+    {
+      number: '02',
+      title: 'Modern Web Development',
+      content: 'We build high-performance websites and applications using modern tools and frameworks. Our focus is on speed, scalability, and seamless user experience across all devices.'
+    },
+    {
+      number: '03',
+      title: 'Team Collaboration',
+      content: 'Great ideas come from collaboration. Our designers, developers, and strategists work closely together to transform ideas into powerful digital solutions.'
+    },
+    {
+      number: '04',
+      title: 'Client Collaboration',
+      content: 'We treat our clients as partners in the creative process. By maintaining clear communication and transparency, we ensure every project aligns with business goals and delivers measurable results.'
+    },
+    {
+      number: '05',
+      title: 'Human-Centered Design',
+      content: 'Our design process focuses on people first. We create intuitive interfaces and engaging experiences that make technology simple, accessible, and enjoyable to use.'
+    },
+  ]
+
   return (
     <main className='relative wholeBg'>
       <section className="header_banner relative">
@@ -44,7 +72,7 @@ const page = () => {
         </div>
       </section>
 
-      <section className='about_us stat_section mt-0 py-20 relative min-[992px]:px-15 px-10 max-[576px]:px-6'>
+      <section className='about_us stat_section mt-0 pb-20 relative min-[992px]:px-15 px-10 max-[576px]:px-6'>
         <div className="statistics relative z-2">
           <div className="container max-w-full">
             <div className="grid min-[1250px]:grid-cols-4 min-[600px]:grid-cols-2 gap-6">
@@ -72,24 +100,56 @@ const page = () => {
         </div>
       </section>
 
-      <div className="statistics relative z-2 mt-10">
+      <section className='company_about mt-0 pb-16 relative min-[992px]:px-[87px] px-10 max-[576px]:px-6'>
         <div className="container max-w-full">
-          <div className="grid grid-cols-1 mt-6">
-            <div className="card min-[1200px]:px-15 px-10 max-[576px]:p-6 relative z-2 py-10 bg-black/0 rounded-[40px] max-[1000px]:flex-col flex justify-between min-[1100px]:items-center promotion max-[1100px]:gap-6" style={{
-              boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45'
-            }}>
-              <div className="">
-                <h2 className="text-white text-2xl min-[780px]:text-3xl min-[1200px]:text-4xl font-normal font-['Michroma'] leading-[48px]">Ready to grow your brand digitally?</h2>
-                <p className="text-white text-lg leading-7 mt-2">Let's work together to create something impactful.</p>
-              </div>
+          <div className='grid grid-cols-2 gap-6'>
+            <div>
+              <h2 className="justify-start text-text-inverse-value text-7xl font-normal font-['Michroma'] leading-[88px]">Design<br />Thinking</h2>
+              <p className="w-full max-w-[821px] justify-start text-white font-bold leading-5 mt-[25px]">At SKYNETECH, our work is driven by design, powered by technology, and focused on solving real problems. We combine creativity, strategy, and development to build digital experiences that are modern, scalable, and impactful.</p>
 
-              <button>
-                <img src="/getinTouch_2.svg" alt="Get in Touch" />
-              </button>
+              <Image src="/discussion.png" width={821} height={527} className='mt-[25px]' />
+            </div>
+            <div className='ml-[-30px]'>
+              <div className='card rounded-2xl p-[10px]'>
+                <div className='grid grid-cols-1 flex-col gap-[10px]'>
+                  {companyAbout.map((item,index) =>(
+                  <div className='card pt-[30px] px-[10px] pb-[9px] rounded' key={index}>
+                    <div className='flex justify-start items-center gap-4'>
+                      <h2 className="justify-start text-[#E30613] text-4xl font-normal font-['Michroma'] leading-[48px]">{item.number}</h2>
+                      <div className="justify-start text-white font-['Inter'] text-3xl font-medium leading-9">{item.title}</div>
+                    </div>
+
+                    <p class=" justify-start text-[#9CA3AF] text-sm mt-[25px] leading-5">{item.content}</p>
+                  </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section className='about_us stat_section mt-0 mb-20 relative min-[992px]:px-15 px-10 max-[576px]:px-6'>
+        <div className="statistics relative z-2">
+          <div className="container max-w-full">
+            <div className="grid grid-cols-1">
+              <div className="card min-[1200px]:px-15 px-10 max-[576px]:p-6 relative z-2 py-10 bg-black/0 rounded-[40px] max-[1000px]:flex-col flex justify-between min-[1100px]:items-center promotion max-[1100px]:gap-6" style={{
+                boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45'
+              }}>
+                <div className="">
+                  <h3 className="text-white text-2xl min-[780px]:text-3xl min-[1200px]:text-4xl font-normal font-['Michroma'] leading-[48px]">Ready to grow your brand digitally?</h3>
+                  <p className="text-white text-lg leading-7 mt-2">Let's work together to create something impactful.</p>
+                </div>
+
+                <button>
+                  <img src="/getinTouch_2.svg" alt="Get in Touch" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
   )
 }

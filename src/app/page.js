@@ -209,7 +209,7 @@ export default function Home() {
 
   return (
     <main className="relative">
-      <section className="header_banner relative">
+      {/* <section className="header_banner relative">
         <Script
           type="module"
           src="https://unpkg.com/@splinetool/viewer@1.12.69/build/spline-viewer.js"
@@ -221,7 +221,7 @@ export default function Home() {
 
         <div className="spline_overlay"></div>
         <div className="spline_overlay2"></div>
-      </section>
+      </section> */}
 
       <section className="homeBg pt-20">
         <section className="about_us pb-20 relative min-[992px]:px-15 px-10 max-[576px]:px-6">
@@ -261,9 +261,7 @@ export default function Home() {
             <div className="container max-w-full">
               <div className="grid min-[1250px]:grid-cols-4 min-[600px]:grid-cols-2 gap-6">
                 {statistics.map((item, index) => (
-                  <div className="card px-16 py-6 bg-black/0 rounded-[40px]" style={{
-                    boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45'
-                  }} key={index}>
+                  <div className="card px-16 py-6 bg-black/0 rounded-[40px]" key={index}>
                     <div className="text-center">
                       <Image src={item.img} alt={item.title} className="mx-auto" width={60} height={60} />
                       <div className="text-center text-white min-[700px]:text-4xl text-3xl font-normal font-['Michroma'] leading-[48px]">{item.number}</div>
@@ -274,9 +272,7 @@ export default function Home() {
               </div>
 
               <div className="grid grid-cols-1 mt-6">
-                <div className="card min-[1200px]:px-15 px-10 max-[576px]:p-6 relative z-2 py-10 bg-black/0 rounded-[40px] max-[1000px]:flex-col flex justify-between min-[1100px]:items-center promotion max-[1100px]:gap-6" style={{
-                  boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45'
-                }}>
+                <div className="card min-[1200px]:px-15 px-10 max-[576px]:p-6 relative z-2 py-10 bg-black/0 rounded-[40px] max-[1000px]:flex-col flex justify-between min-[1100px]:items-center promotion max-[1100px]:gap-6">
                   <div className="">
                     <h2 className="text-white text-2xl min-[780px]:text-3xl min-[1200px]:text-4xl font-normal font-['Michroma'] leading-[48px]">Ready to grow your brand digitally?</h2>
                     <p className="text-white text-lg leading-7 mt-2">Let's work together to create something impactful.</p>
@@ -302,9 +298,7 @@ export default function Home() {
 
             <div className="grid grid-cols-1 max-[1100px]:grid-cols-2 max-[768px]:grid-cols-1 gap-6">
               {services.map((item, index) => (
-                <div className="card p-2.5 bg-black/0 rounded-[53px] max-[576px]:rounded-[24px] relative services_card" key={index} style={{
-                  boxShadow: '0 0 13px #00000075, inset 0 1px #e30613a1 , inset 0 -1px #e30613a1, inset 1px 0 #a4a4a4, inset -1px 0 #a4a4a4'
-                }}>
+                <div className="card p-2.5 bg-black/0 rounded-[53px] max-[576px]:rounded-[24px] relative services_card">
                   <div className="grid min-[1100px]:grid-cols-[1.0fr_1.2fr_0.8fr] grid-cols-1 max-[1100px]:pb-5 pt-2 items-start min-[1280px]:items-center max-[1400px]:items-center min-[1400px]:items-start">
                     <div className="hidden justify-center max-[1100px]:flex ">
                       <img src={item.img} className="max-[768px]:w-full max-[768px]:px-1" alt={item.heading} />
