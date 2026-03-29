@@ -128,8 +128,8 @@ export default function Home() {
       ],
       location: "US",
       images: [
-        "/project_1.png",
-        "/project_2.png",
+        "/heimdall-1.png",
+        "/heimdall-2.png",
       ],
     },
     {
@@ -139,8 +139,8 @@ export default function Home() {
       services: ["Branding", "Web Design", "Web Development", "Strategy", "UI"],
       location: "US",
       images: [
-        "/project_1.png",
-        "/project_2.png",
+        "/cula-1.webm",
+        "/cula-2.png",
       ],
     },
     {
@@ -156,8 +156,8 @@ export default function Home() {
       ],
       location: "US",
       images: [
-        "/project_1.png",
-        "/project_2.png",
+        "/arqitel-1.webm",
+        "/arqitel-2.png",
       ],
     },
   ];
@@ -304,18 +304,18 @@ export default function Home() {
                       <img src={item.img} className="max-[768px]:w-full max-[768px]:px-1" alt={item.heading} />
                     </div>
 
-                    <div className="flex items-start min-[1400px]:mt-14 ps-5 max-[1100px]:mt-5">
+                    <div className="flex items-start min-[1600px]:mt-12 max-[1600px]:mt-8 ps-5 max-[1400px]:mt-1 max-[1100px]:mt-4">
                       <h3 className="text-white font-normal text-3xl min-[1280px]:text-4xl min-[1580px]:text-5xl font-['Michroma'] leading-[44px] min-[1280px]:leading-[58px] min-[1580px]:leading-[68px]">
                         {item.heading}<br />
                       </h3>
                     </div>
 
-                    <div className="flex items-start justify-start max-[1100px]:mt-6 min-[1400px]:mt-14 flex-col px-6">
+                    <div className="flex items-start justify-start max-[1100px]:mt-6 max-[1600px]:mt-8 min-[1600px]:mt-12 flex-col px-6">
                       <p className="self-stretch text-white text-lg font-medium leading-7">
                         {item.content}
                       </p>
 
-                      <div className="mt-12 max-[1100px]:mt-6">
+                      <div className="mt-9 max-[1100px]:mt-6">
                         <Link href={item.path}>
                           <img src="/learn_more.svg" alt="Learn more" />
                         </Link>
@@ -431,28 +431,43 @@ export default function Home() {
                     </div>
 
                     <div className="grid grid-cols-[2.0fr_1.0fr] max-[768px]:grid-cols-1 projects_showcase gap-6 mt-3 projects_img relative z-2">
-                      {project.images.map((img, i) => (
-                        <div
-                          key={i}
-                          className={`relative h-fit p-2 
-                                                    ${i === 1 ? "max-[768px]:hidden" : ""}
-                                                    min-[1400px]:rounded-[40px] 
-                                                    min-[1200px]:rounded-[34px] 
-                                                    min-[992px]:rounded-[30px] 
-                                                    max-[992px]:rounded-[28px]`}
-                          style={{
-                            boxShadow:
-                              "0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45",
-                          }}
-                        >
-                          <Image
-                            src={img}
-                            alt=""
-                            fill
-                            className="object-cover rounded-lg h-full"
-                          />
-                        </div>
-                      ))}
+                      {project.images.map((img, i) => {
+                        const isVideo = img.endsWith(".webm") || img.endsWith(".mp4");
+
+                        return (
+                          <div
+                            key={i}
+                            className={`relative h-fit p-2 
+          ${i === 1 ? "max-[768px]:hidden" : ""}
+          min-[1400px]:rounded-[40px] 
+          min-[1200px]:rounded-[34px] 
+          min-[992px]:rounded-[30px] 
+          max-[992px]:rounded-[28px]`}
+                            style={{
+                              boxShadow:
+                                "0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45",
+                            }}
+                          >
+                            {isVideo ? (
+                              <video
+                                src={img}
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                className="w-full h-full object-cover rounded-4xl"
+                              />
+                            ) : (
+                              <Image
+                                src={img}
+                                alt=""
+                                fill
+                                className="object-cover rounded-lg h-full"
+                              />
+                            )}
+                          </div>
+                        );
+                      })}
                     </div>
 
                     <div className="inner-projects-circle-1"></div>

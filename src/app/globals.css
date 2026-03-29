@@ -63,7 +63,7 @@ h6 .heading {
 }
 
 .card {
-  box-shadow: 0 0 13px #00000075, inset 0 1px #e30613a1, inset 0 -1px #e30613a1, inset 1px 0 #a4a4a4, inset -1px 0 #a4a4a4;
+  box-shadow: 0 0 13px #00000075, inset 0 1px #e30613a1, inset 0 -1px #e30613a1, inset 1px 0 #a4a4a4, inset -1px 0 #a4a4a4, inset 7px 7px 10px rgba(0, 0, 0, 0.197), inset -7px -7px 10px rgba(0, 0, 0, 0.197);
 }
 
 .footer_Section,
@@ -125,11 +125,11 @@ h6 .heading {
 
 .footer_wrapper {
   backdrop-filter: blur(36px);
-  background: rgba(255, 255, 255, 0.05);
+  background: #14050538;
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow:
     inset 0 0 40px rgba(255, 0, 0, 0.2),
-    0 0 80px rgba(206, 133, 133, 0);
+    0 0 80px rgba(206, 133, 133, 0), inset 7px 7px 10px rgba(0, 0, 0, 0.197), inset -7px -7px 10px rgba(0, 0, 0, 0.197);
   position: relative;
   overflow: hidden;
 }
@@ -437,10 +437,10 @@ input {
   filter: blur(27px);
   background: #e30613;
   border-radius: 257px;
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   position: absolute;
-  bottom: 30px;
+  bottom: 80px;
   right: 3px;
   box-shadow: 0 0 46.44px #ffa4a4, 0 0 92.88px #d20000, 0 0 250px #ffa4a4, 0 0 250px #ffa4a4, 0 0 250px #ffa4a400;
 }
@@ -571,7 +571,7 @@ input {
   border-radius: 20px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 13px #00000075, inset 0 1px #e3061399, inset 0 -1px #ffffff38, inset -2px 0 #e3061399;
+  box-shadow: 0 0 13px #00000075, inset 0 1px #e3061399, inset 0 -1px #ffffff38, inset -2px 0 #e3061399, inset 7px 7px 10px rgba(0, 0, 0, 0.197), inset -7px -7px 10px rgba(0, 0, 0, 0.197);
   background: #01010133;
 }
 
@@ -643,7 +643,7 @@ input {
 .inner-projects-circle-1 {
   opacity: 1;
   mix-blend-mode: hard-light;
-  filter: blur(15px);
+  filter: blur(45px);
   background: #e30613;
   border-radius: 257px;
   width: 180px;
@@ -651,7 +651,7 @@ input {
   position: absolute;
   top: -120px;
   right: -110px;
-  box-shadow: 0 0 46.44px #ffa4a4, 0 0 92.88px #d20000, 0 0 250px #ffa4a4, 0 0 250px #ffa4a4, 0 0 250px #ffa4a400;
+  box-shadow: 0 0 46.44px #e30613, 0 0 92.88px #850404;
 }
 
 .inner-projects-circle-2 {

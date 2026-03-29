@@ -47,8 +47,8 @@ const page = () => {
             ],
             location: "US",
             images: [
-                "/project_1.png",
-                "/project_2.png",
+                "/heimdall-1.png",
+                "/heimdall-2.png",
             ],
         },
         {
@@ -58,8 +58,8 @@ const page = () => {
             services: ["Branding", "Web Design", "Web Development", "Strategy", "UI"],
             location: "US",
             images: [
-                "/project_1.png",
-                "/project_2.png",
+                "/cula-1.webm",
+                "/cula-2.png",
             ],
         },
         {
@@ -75,8 +75,8 @@ const page = () => {
             ],
             location: "US",
             images: [
-                "/project_1.png",
-                "/project_2.png",
+                "/arqitel-1.webm",
+                "/arqitel-2.png",
             ],
         },
     ];
@@ -177,28 +177,43 @@ const page = () => {
                                     </div>
 
                                     <div className="grid grid-cols-[2.0fr_1.0fr] max-[768px]:grid-cols-1 projects_showcase gap-6 mt-3 projects_img relative z-2">
-                                        {project.images.map((img, i) => (
-                                            <div
-                                                key={i}
-                                                className={`relative h-fit p-2 
-                                                    ${i === 1 ? "max-[768px]:hidden" : ""}
-                                                    min-[1400px]:rounded-[40px] 
-                                                    min-[1200px]:rounded-[34px] 
-                                                    min-[992px]:rounded-[30px] 
-                                                    max-[992px]:rounded-[28px]`}
-                                                style={{
-                                                    boxShadow:
-                                                        "0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45",
-                                                }}
-                                            >
-                                                <Image
-                                                    src={img}
-                                                    alt=""
-                                                    fill
-                                                    className="object-cover rounded-lg h-full"
-                                                />
-                                            </div>
-                                        ))}
+                                        {project.images.map((img, i) => {
+                                            const isVideo = img.endsWith(".webm") || img.endsWith(".mp4");
+
+                                            return (
+                                                <div
+                                                    key={i}
+                                                    className={`relative h-fit p-2 
+          ${i === 1 ? "max-[768px]:hidden" : ""}
+          min-[1400px]:rounded-[40px] 
+          min-[1200px]:rounded-[34px] 
+          min-[992px]:rounded-[30px] 
+          max-[992px]:rounded-[28px]`}
+                                                    style={{
+                                                        boxShadow:
+                                                            "0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45",
+                                                    }}
+                                                >
+                                                    {isVideo ? (
+                                                        <video
+                                                            src={img}
+                                                            autoPlay
+                                                            muted
+                                                            loop
+                                                            playsInline
+                                                            className="w-full h-full object-cover rounded-4xl"
+                                                        />
+                                                    ) : (
+                                                        <Image
+                                                            src={img}
+                                                            alt=""
+                                                            fill
+                                                            className="object-cover rounded-lg h-full"
+                                                        />
+                                                    )}
+                                                </div>
+                                            );
+                                        })}
                                     </div>
 
                                     <div className="inner-projects-circle-1"></div>
