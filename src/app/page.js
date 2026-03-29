@@ -221,7 +221,9 @@ export default function Home() {
 
         <div className="spline_overlay max-[768px]:hidden"></div>
         <div className="spline_overlay2"></div>
-      </section>
+      </section>   
+
+      {/* <div></div> */}
 
       <section className="homeBg pt-20 max-[768px]:pt-0">
         <section className="about_us pb-20 relative min-[992px]:px-[87px] px-10 max-[576px]:px-6">
