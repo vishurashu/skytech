@@ -164,7 +164,7 @@ const page = () => {
                                         }`}
                                 >
                                     <div className="max-[992px]:mt-3 relative z-2">
-                                        <Link href={""}>
+                                        <Link href={"/detail"}>
                                             <div className=" min-[992px]:p-5 p-4 bg-black/0 rounded-[31px] inline-flex justify-center items-center gap-2.5 w-auto"
                                                 style={{
                                                     boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45'
@@ -216,9 +216,9 @@ const page = () => {
                                         })}
                                     </div>
 
-                                    <div className="inner-projects-circle-1"></div>
-                                    <div className="inner-projects-circle-2"></div>
-                                    <div className="inner-projects-circle-3 max-[992px]:hidden"></div>
+                                    <div className="inner-projects-circle-1 blur-circle"></div>
+                                    <div className="inner-projects-circle-2 blur-circle"></div>
+                                    <div className="inner-projects-circle-3 blur-circle max-[992px]:hidden"></div>
                                 </div>
 
                             </div>
@@ -261,10 +261,10 @@ const page = () => {
                     </div>
                 </div>
                 <div className="feedback-bg absolute w-full h-[300px] top-0 left-0 -z-1"></div>
-                <div className="feedback-circle-1 max-[768px]:hidden"></div>
-                <div className="feedback-circle-2 max-[1400px]:hidden"></div>
-                <div className="feedback-circle-3"></div>
-                <div className="feedback-circle-4"></div>
+                <div className="feedback-circle-1 blur-circle max-[768px]:hidden"></div>
+                <div className="feedback-circle-2 blur-circle max-[1400px]:hidden"></div>
+                <div className="feedback-circle-3 blur-circle"></div>
+                <div className="feedback-circle-4 blur-circle"></div>
             </section>
         </main>
     )

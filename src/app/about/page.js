@@ -99,11 +99,11 @@ const page = () => {
           </div>
         </div>
 
-        <div className='circle-1'></div>
-        <div className='circle-2 max-[992px]:hidden'></div>
-        <div className='circle-3'></div>
-        <div className='circle-4'></div>
-        <div className='circle-5 max-[1400px]:hidden'></div>
+        <div className='circle-1 blur-circle'></div>
+        <div className='circle-2 blur-circle max-[992px]:hidden'></div>
+        <div className='circle-3 blur-circle'></div>
+        <div className='circle-4 blur-circle'></div>
+        <div className='circle-5 blur-circle max-[1400px]:hidden'></div>
       </section>
 
       <section className='company_about z-[-1] mt-0 pb-16 relative min-[1400px]:px-[87px] px-14 max-[768px]:px-8'>
@@ -155,12 +155,12 @@ const page = () => {
           </div>
         </div>
 
-        <div className='company-about-circle-1 max-[768px]:hidden'></div>
-        <div className='company-about-circle-2'></div>
-        <div className='company-about-circle-3 max-[576px]:hidden'></div>
-        <div className='company-about-circle-4'></div>
-        <div className='company-about-circle-5'></div>
-        <div className='company-about-circle-6 max-[1400px]:hidden'></div>
+        <div className='company-about-circle-1 blur-circle max-[768px]:hidden'></div>
+        <div className='company-about-circle-2 blur-circle'></div>
+        <div className='company-about-circle-3 blur-circle max-[576px]:hidden'></div>
+        <div className='company-about-circle-4 blur-circle'></div>
+        <div className='company-about-circle-5 blur-circle'></div>
+        <div className='company-about-circle-6 blur-circle max-[1400px]:hidden'></div>
       </section>
 
     </main>

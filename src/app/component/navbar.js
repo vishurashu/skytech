@@ -10,7 +10,6 @@ const Navbar = () => {
     const pathname = usePathname();
     const [open, setOpen] = useState(false);
 
-    // stop scrolling when sidebar opens
     useEffect(() => {
         if (open) {
             document.body.style.overflow = "hidden";

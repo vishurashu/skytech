@@ -184,10 +184,10 @@ const page = () => {
           </div>
         </div>
         <div className="feedback-bg absolute w-full h-[300px] top-0 left-0 -z-1"></div>
-        <div className="feedback-circle-1 max-[768px]:hidden"></div>
-        <div className="feedback-circle-2 max-[1400px]:hidden"></div>
-        <div className="feedback-circle-3"></div>
-        <div className="feedback-circle-4"></div>
+        <div className="feedback-circle-1 blur-circle max-[768px]:hidden"></div>
+        <div className="feedback-circle-2 blur-circle max-[1400px]:hidden"></div>
+        <div className="feedback-circle-3 blur-circle"></div>
+        <div className="feedback-circle-4 blur-circle"></div>
       </section>
     </main>
   )

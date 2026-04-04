@@ -30,6 +30,10 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+body.loading {
+  overflow: hidden !important;
+}
+
 spline-viewer {
   transform: translateZ(0);
   will-change: transform;
@@ -39,7 +43,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), sans-serif !important;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 
@@ -68,7 +72,8 @@ h6 .heading {
 
 .footer_Section,
 .about_us,
-.projects, .conatct_us {
+.projects,
+.conatct_us {
   background: linear-gradient(180deg, #010101 8%, #270000 100%);
 }
 
@@ -472,6 +477,36 @@ input {
   position: absolute;
   bottom: 315px;
   left: 11%;
+  box-shadow: 0 0 46.44px #ffa4a4, 0 0 92.88px #d20000, 0 0 250px #ffa4a4, 0 0 250px #ffa4a4, 0 0 250px #ffa4a400;
+}
+
+.feedback-circle-5 {
+  opacity: .76;
+  mix-blend-mode: hard-light;
+  z-index: -1;
+  filter: blur(20px);
+  background: #e30613;
+  border-radius: 257px;
+  width: 240px;
+  height: 240px;
+  position: absolute;
+  top: 205px;
+  right: 3%;
+  box-shadow: 0 0 46.44px #ffa4a4, 0 0 92.88px #d20000, 0 0 250px #ffa4a4, 0 0 250px #ffa4a4, 0 0 250px #ffa4a400;
+}
+
+.feedback-circle-6 {
+  opacity: .76;
+  mix-blend-mode: hard-light;
+  z-index: -1;
+  filter: blur(30px);
+  background: #e30613;
+  border-radius: 257px;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 730px;
+  left: 10%;
   box-shadow: 0 0 46.44px #ffa4a4, 0 0 92.88px #d20000, 0 0 250px #ffa4a4, 0 0 250px #ffa4a4, 0 0 250px #ffa4a400;
 }
 
@@ -912,20 +947,26 @@ input {
   }
 }
 
-.map_overlay{
+.map_overlay {
   background: #E30613;
   mix-blend-mode: soft-light;
 }
 
-.contact_form input::placeholder, .contact_form textarea::placeholder{
+.contact_form input::placeholder,
+.contact_form textarea::placeholder {
   color: #9CA3AF !important;
 }
 
-.contact_form input, .contact_form textarea{
+.contact_form input,
+.contact_form textarea {
   color: #9CA3AF !important;
 }
 
-select{
+select {
   color: #9CA3AF;
   appearance: none;
+}
+
+.blur-circle {
+  will-change: transform;
 }

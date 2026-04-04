@@ -91,9 +91,9 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="footer-circle-1"></div>
-                <div className="footer-circle-2"></div>
-                <div className="footer-circle-3 max-[768px]:hidden"></div>
+                <div className="footer-circle-1 blur-circle"></div>
+                <div className="footer-circle-2 blur-circle"></div>
+                <div className="footer-circle-3 blur-circle max-[768px]:hidden"></div>
             </footer >
         </div>
     )

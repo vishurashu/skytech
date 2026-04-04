@@ -207,9 +207,11 @@ export default function Home() {
     requestAnimationFrame(animate);
   }, []);
 
+ 
+
   return (
     <main className="relative">
-       <section className="header_banner relative max-[768px]:mt-[100px]" >
+      <section className="header_banner relative max-[768px]:mt-[100px]" >
         <Script
           type="module"
           src="https://unpkg.com/@splinetool/viewer@1.12.69/build/spline-viewer.js"
@@ -221,7 +223,7 @@ export default function Home() {
 
         <div className="spline_overlay max-[768px]:hidden"></div>
         <div className="spline_overlay2"></div>
-      </section>   
+      </section>
 
       {/* <div></div> */}
 
@@ -255,8 +257,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="about-circle-1"></div>
-            <div className="about-circle-2"></div>
+            <div className="about-circle-1 blur-circle" ></div>
+            <div className="about-circle-2 blur-circle" ></div>
           </div>
 
           <div className="statistics relative z-2 mt-10">
@@ -288,8 +290,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="about-circle-3"></div>
-          <div className="about-circle-4 z-1"></div>
+          <div className="about-circle-3 blur-circle"></div>
+          <div className="about-circle-4 blur-circle z-1"></div>
         </section>
 
         <section className="services relative min-[992px]:px-[87px] px-10 max-[576px]:px-6">
@@ -333,10 +335,10 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="services-circle-1"></div>
-          <div className="services-circle-2"></div>
-          <div className="services-circle-3"></div>
-          <div className="services-circle-4"></div>
+          <div className="services-circle-1 blur-circle"></div>
+          <div className="services-circle-2 blur-circle"></div>
+          <div className="services-circle-3 blur-circle"></div>
+          <div className="services-circle-4 blur-circle"></div>
         </section>
 
         <section className="partners mt-20 min-[992px]:px-[87px] px-10 max-[576px]:px-6">
@@ -361,7 +363,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="projects relative py-20">
+        <section className="projects relative py-20 z-2">
           <div className="min-[992px]:px-[87px] px-10 max-[576px]:px-6">
             <div className="container relative z-1 max-w-full pb-16 overflow-hidden" style={{
               background: 'background: linear-gradient(182deg, #01010100 0%, #01010169 100%)', backdropFilter: 'blur(15px)'
@@ -420,7 +422,7 @@ export default function Home() {
                       }`}
                   >
                     <div className="max-[992px]:mt-3 relative z-2">
-                      <Link href={""}>
+                      <Link href={"/detail"}>
                         <div className=" min-[992px]:p-5 p-4 bg-black/0 rounded-[31px] inline-flex justify-center items-center gap-2.5 w-auto"
                           style={{
                             boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45'
@@ -472,17 +474,15 @@ export default function Home() {
                       })}
                     </div>
 
-                    <div className="inner-projects-circle-1"></div>
-                    <div className="inner-projects-circle-2"></div>
-                    <div className="inner-projects-circle-3 max-[992px]:hidden"></div>
+                    <div className="inner-projects-circle-1 blur-circle"></div>
+                    <div className="inner-projects-circle-2 blur-circle"></div>
+                    <div className="inner-projects-circle-3 blur-circle max-[992px]:hidden"></div>
                   </div>
 
                 </div>
               </div>
             ))}
           </div>
-
-          {/* <div className="projects-circle-1"></div> */}
 
         </section>
 
@@ -517,10 +517,10 @@ export default function Home() {
             </div>
           </div>
           <div className="feedback-bg absolute w-full h-[300px] top-0 left-0 -z-1"></div>
-          <div className="feedback-circle-1 max-[768px]:hidden"></div>
-          <div className="feedback-circle-2 max-[1400px]:hidden"></div>
-          <div className="feedback-circle-3"></div>
-          <div className="feedback-circle-4"></div>
+          <div className="feedback-circle-1 blur-circle max-[768px]:hidden"></div>
+          <div className="feedback-circle-2 blur-circle max-[1400px]:hidden"></div>
+          <div className="feedback-circle-3 blur-circle"></div>
+          <div className="feedback-circle-4 blur-circle"></div>
         </section>
       </section>
     </main>
