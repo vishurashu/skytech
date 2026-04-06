@@ -192,19 +192,25 @@ export default function Home() {
   const trackRef = useRef(null);
 
   useEffect(() => {
+    if (!trackRef.current) return;
+
     let position = 0;
     const speed = 0.9;
+    let animationId;
 
     const animate = () => {
+      if (!trackRef.current) return;
       position -= speed;
       if (Math.abs(position) >= trackRef.current.scrollWidth / 2) {
         position = 0;
       }
       trackRef.current.style.transform = `translateX(${position}px)`;
-      requestAnimationFrame(animate);
+      animationId = requestAnimationFrame(animate);
     };
 
-    requestAnimationFrame(animate);
+    animationId = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationId);
   }, []);
 
  
@@ -302,7 +308,7 @@ export default function Home() {
 
             <div className="grid grid-cols-1 max-[1100px]:grid-cols-2 max-[768px]:grid-cols-1 gap-6">
               {services.map((item, index) => (
-                <div className="card p-2.5 bg-black/0 rounded-[53px] max-[576px]:rounded-[24px] relative services_card">
+                <div key={index} className="card p-2.5 bg-black/0 rounded-[53px] max-[576px]:rounded-[24px] relative services_card">
                   <div className="grid min-[1100px]:grid-cols-[1.0fr_1.2fr_0.8fr] grid-cols-1 max-[1100px]:pb-5 pt-2 items-start min-[1280px]:items-center max-[1400px]:items-center min-[1400px]:items-start">
                     <div className="hidden justify-center max-[1100px]:flex ">
                       <img src={item.img} className="max-[768px]:w-full max-[768px]:px-1" alt={item.heading} />
