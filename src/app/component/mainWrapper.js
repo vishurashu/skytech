@@ -54,7 +54,7 @@ export default function mainWrapper({ children }) {
                 circle.style.transform = `translate(${-currentX * 30}px, ${-currentY * 30}px)`;
             });
 
-            requestAnimationFrame(animate);
+            animationId = requestAnimationFrame(animate);
         }
 
         animationId = requestAnimationFrame(animate);
@@ -70,7 +70,7 @@ export default function mainWrapper({ children }) {
             {showLoader && (
                 <Loader onFinish={() => setShowLoader(false)} />
             )}
-            <ReactLenis root>
+            <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}>
                 <Navbar />
                 {children}
                 <Footer />
