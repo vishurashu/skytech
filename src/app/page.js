@@ -213,7 +213,7 @@ export default function Home() {
     return () => cancelAnimationFrame(animationId);
   }, []);
 
- 
+
 
   return (
     <main className="relative">
@@ -226,6 +226,7 @@ export default function Home() {
           url="https://prod.spline.design/6PPzV2EcRbTTLY32/scene.splinecode"
           loading="lazy"
         ></spline-viewer>
+
 
         <div className="spline_overlay max-[768px]:hidden"></div>
         <div className="spline_overlay2"></div>
