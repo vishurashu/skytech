@@ -1,35 +1,45 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function loader({ onFinish }) {
-  const [count, setCount] = useState(0);
+  const numberRef = useRef(null);
+  const [slideUp, setSlideUp] = useState(false);
 
   useEffect(() => {
-    const duration = 5000;
-    const startTime = performance.now();
+    let current = 0;
+    const interval = setInterval(() => {
+      current += 1;
 
-    function animate(now) {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-
-      const value = Math.floor(progress * 100);
-      setCount(value);
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        onFinish(); // ✅ ONLY here we finish
+      if (numberRef.current) {
+        numberRef.current.textContent = current;
       }
-    }
 
-    requestAnimationFrame(animate);
+      if (current >= 100) {
+        clearInterval(interval);
+        setTimeout(() => setSlideUp(true), 300);
+        setTimeout(() => onFinish?.(), 1600);
+      }
+    }, 50);
+
+    return () => clearInterval(interval);
   }, [onFinish]);
 
   return (
-    <div className="fixed inset-0 bg-black flex items-center justify-center z-[9999]">
-      <h1 className="text-[120px] font-bold text-gray-600">
-        {count}
+    <div
+      className="fixed inset-0 bg-black flex items-center justify-center z-[9999]"
+      style={{
+        transform: slideUp ? "translateY(-100%) translateZ(0)" : "translateY(0) translateZ(0)",
+        transition: slideUp ? "transform 1.3s cubic-bezier(0.87, 0, 0.13, 1)" : "none",
+        willChange: "transform",       
+        backfaceVisibility: "hidden",  
+      }}
+    >
+      <h1
+        className="text-[120px] font-bold text-gray-600"
+        style={{ willChange: "transform" }} 
+      >
+        <span ref={numberRef}>0</span>
         <span style={{ color: "#E30613" }}>%</span>
       </h1>
     </div>

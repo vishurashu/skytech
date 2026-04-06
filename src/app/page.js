@@ -274,7 +274,7 @@ export default function Home() {
                 {statistics.map((item, index) => (
                   <div className="card px-16 py-6 bg-black/0 rounded-[40px]" key={index}>
                     <div className="text-center">
-                      <Image src={item.img} alt={item.title} className="mx-auto" width={60} height={60} />
+                      <Image src={item.img} alt={item.title} className="mx-auto w-[60px] h-[60px]" width={60} height={60} />
                       <div className="text-center text-white min-[700px]:text-4xl text-3xl font-normal font-['Michroma'] leading-[48px] mt-3">{item.number}</div>
                       <p className="text-center font-light text-white text-base leading-6 mt-1">{item.title}</p>
                     </div>
@@ -372,7 +372,7 @@ export default function Home() {
 
         <section className="projects relative py-20 z-2">
           <div className="min-[992px]:px-[87px] px-10 max-[576px]:px-6">
-            <div className="container relative z-1 max-w-full pb-16 overflow-hidden" style={{
+            <div className="container relative max-w-full pb-16 overflow-hidden" style={{
               background: 'background: linear-gradient(182deg, #01010100 0%, #01010169 100%)', backdropFilter: 'blur(15px)'
             }}>
               <div className="grid grid-cols-1 mt-6">

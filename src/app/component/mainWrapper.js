@@ -2,33 +2,35 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { ReactLenis } from "lenis/react";
+import { ReactLenis, useLenis  } from "lenis/react";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import Loader from "./loader";
 
 export default function mainWrapper({ children }) {
     const pathname = usePathname();
-    const [loading, setLoading] = useState(true);
+    const lenis = useLenis();
+    const [showLoader, setShowLoader] = useState(pathname === "/");
 
     useEffect(() => {
-        // show loader on route change
-        setLoading(true);
-
-        document.body.classList.add("loading");
-
-        const timer = setTimeout(() => {
-            setLoading(false);
-            document.body.classList.remove("loading");
-        }, 5000);
-
-        return () => clearTimeout(timer);
+        if (pathname === "/") {
+            setShowLoader(true);
+        }
     }, [pathname]);
 
     useEffect(() => {
-        // Disable on mobile/tablets where mouse hover is irrelevant
-        if (window.innerWidth < 992) return;
+        if (lenis) {
+            lenis.scrollTo(0, { immediate: true });
+        }
+    }, [pathname, lenis]);
 
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            window.history.scrollRestoration = "manual";
+        }
+    }, []);
+
+    useEffect(() => {
         let currentX = 0, currentY = 0;
         let targetX = 0, targetY = 0;
         let animationId;
@@ -47,12 +49,12 @@ export default function mainWrapper({ children }) {
         function animate() {
             currentX += (targetX - currentX) * 0.08;
             currentY += (targetY - currentY) * 0.08;
-        
+
             circles.forEach((circle) => {
                 circle.style.transform = `translate(${-currentX * 30}px, ${-currentY * 30}px)`;
             });
-        
-            animationId = requestAnimationFrame(animate);
+
+            requestAnimationFrame(animate);
         }
 
         animationId = requestAnimationFrame(animate);
@@ -61,17 +63,19 @@ export default function mainWrapper({ children }) {
             window.removeEventListener("mousemove", handleMouseMove);
             if (animationId) cancelAnimationFrame(animationId);
         };
-    }, [pathname]); 
+    }, [pathname]);
 
     return (
         <>
-            <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}>
+            {showLoader && (
+                <Loader onFinish={() => setShowLoader(false)} />
+            )}
+            <ReactLenis root>
                 <Navbar />
                 {children}
                 <Footer />
             </ReactLenis>
 
-            {loading && <Loader onFinish={() => setLoading(false)} />}
         </>
     );
 }
