@@ -1,9 +1,9 @@
 "use client";
 
-import React from 'react'
+import React from 'react';
 import Link from "next/link";
-import Image from 'next/image'
-import { useState, useEffect, useRef } from "react";
+import Image from 'next/image';
+import { useState, useEffect } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 const page = () => {
@@ -111,7 +111,7 @@ const page = () => {
     return (
         <main className='relative wholeBg'>
             <section className="header_banner relative">
-                <Image src="/portfolioHero.png" alt="About us" width={1920} height={650} className='w-full h-full object-cover max-[1300px]:h-[450px]' />
+                <Image src="/portfolioHero.png" alt="SKYNETECH portfolio showcase" width={1920} height={650} priority className='w-full h-full object-cover max-[1300px]:h-[450px]' />
 
                 <div className='absolute bottom-0 w-full min-[1400px]:pb-10 pb-8 min-[1400px]:px-[87px] px-14 max-[768px]:px-8'>
                     <div className='container max-w-full'>
