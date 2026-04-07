@@ -35,9 +35,9 @@ const page = () => {
       <section className="header_banner relative">
         <Image src="/serviceHero.png" alt="About us" width={1920} height={650} className='w-full h-full object-cover max-[1300px]:h-[450px]' />
 
-        <div className='absolute bottom-0 w-full min-[1400px]:pb-20 min-[992px]:pb-14 pb-8 min-[1400px]:px-[87px] px-14 max-[768px]:px-8'>
+        <div className='absolute bottom-0 w-full min-[1400px]:pb-20 min-[992px]:pb-14 pb-8 min-[992px]:px-[87px] px-10 max-[576px]:px-6'>
           <div className='container max-w-full'>
-            <h1 className="text-white min-[1850px]:text-[120px] min-[1600px]:text-[102px] min-[1400px]:text-[85px] text-5xl min-[1030px]:text-[65px] max-[385px]:text-[40px] font-['Michroma'] min-[1700px]:leading-[140px] min-[1400px]:leading-[85px] min-[992px]:leading-[85px] leading-[60px] min-[992px]:w-full min-[768px]:w-[760px]">It's time to Skynetech</h1>
+            <div className="text-white min-[1850px]:text-[120px] min-[1600px]:text-[102px] min-[1400px]:text-[85px] text-5xl min-[1030px]:text-[65px] max-[385px]:text-[40px] font-['Michroma'] min-[1700px]:leading-[140px] min-[1400px]:leading-[85px] min-[992px]:leading-[85px] leading-[60px] min-[992px]:w-full min-[768px]:w-[760px]">It's time to Skynetech</div>
 
             <div className='flex items-center relative z-1 justify-between min-[1600px]:mt-[30px] min-[992px]:mt-[30px] mt-5 gap-14 max-[992px]:flex-col max-[992px]:items-start max-[992px]:gap-5'>
               <p className="w-full max-w-[1250px] justify-start text-white min-[992px]:font-semibold font-medium leading-5">Let's create something amazing, together.</p>
@@ -46,13 +46,13 @@ const page = () => {
         </div>
       </section>
 
-      <section className='conatct_us relative pt-20 pb-15 min-[1400px]:px-[87px] px-14 max-[768px]:px-8'>
+      <section className='conatct_us relative pt-20 max-[768px]:pt-14 pb-15 max-[768px]:pb-10 min-[992px]:px-[87px] px-10 max-[576px]:px-6'>
         <div className='container max-w-full z-1 relative'>
           <div className='grid min-[1400px]:grid-cols-[1.6fr_1.4fr] min-[1200px]:grid-cols-[1.5fr_1.5fr] grid-cols-1 gap-6'>
             <div className='card rounded-[20px] p-[10px]'>
               <div className='grid grid-cols-1 gap-[10px] z-2 relative h-full'>
                 <div className='card p-5 rounded-[10px] promotion'>
-                  <h2 className="text-white min-[1250px]:text-5xl text-4xl font-normal font-['Michroma'] leading-[58px] pb-6">Visit Our Office</h2>
+                  <div className="text-white min-[1250px]:text-5xl text-4xl font-normal font-['Michroma'] leading-[58px] pb-6">Visit Our Office</div>
 
                   <div className='mt-[28px]'>
                     <ul>
@@ -103,11 +103,11 @@ const page = () => {
             <div className='card rounded-[20px] p-[10px]'>
               <div className='grid grid-cols-1 flex-col gap-[10px] z-2 relative'>
                 <div className='card p-5 rounded-[10px] promotion'>
-                  <h2 className="text-white min-[1250px]:text-5xl text-4xl font-normal font-['Michroma'] leading-[58px] pb-6">Start Your Project With Us</h2>
+                  <div className="text-white min-[1250px]:text-5xl text-4xl font-normal font-['Michroma'] leading-[58px] pb-6">Start Your Project With Us</div>
                   <p className='text-white text-[18px] font-medium'>Tell us about your idea and our team will get back to you quickly with the best solution tailored to your needs.</p>
                   <div className='mt-8'>
                     <form className='contact_form'>
-                      <div className='grid grid-cols-2 gap-3'>
+                      <div className='grid grid-cols-2 max-[576px]:grid-cols-1 gap-3 max-[576px]:gap-7'>
                         <div className=''>
                           <label htmlFor='fname' className='text-[14px] font-semibold block'>Full Name</label>
                           <input type='text' className='bg-white h-[48px] rounded-2xl w-full mt-2 ps-4' placeholder='John doe' id='fname' />
@@ -175,7 +175,7 @@ const page = () => {
                   <img src={item.img} width={65} height={65} alt={item.name} />
 
                   <div>
-                    <h6 className="text-white text-lg font-medium">{item.name}</h6>
+                    <div className="text-white text-lg font-medium">{item.name}</div>
                     <div className="justify-center text-gray-500 text-[12px] mt-2 font-medium leading-3">{item.profession}</div>
                   </div>
                 </div>

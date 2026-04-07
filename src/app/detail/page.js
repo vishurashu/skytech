@@ -70,11 +70,11 @@ const page = () => {
     return (
         <main className='relative wholeBg'>
             <section className="header_banner relative">
-                <Image src="/portfolioDetails.png" alt="About us" width={1920} height={950} className='w-full h-full object-cover max-[1500px]:h-[750px] max-[768px]:h-[850px]' />
+                <Image src="/portfolioDetails.png" alt="About us" width={1920} height={950} className='w-full h-full object-cover max-[1500px]:h-[750px] max-[768px]:h-[850px] max-[420px]:h-[930px]' />
 
-                <div className='absolute bottom-0 w-full min-[1400px]:pb-20 min-[992px]:pb-14 pb-8 min-[1400px]:px-[87px] px-14 max-[768px]:px-8'>
+                <div className='absolute bottom-0 w-full min-[1400px]:pb-20 min-[992px]:pb-14 pb-8 min-[992px]:px-[87px] px-10 max-[576px]:px-6'>
                     <div className='container max-w-full'>
-                        <h1 className="text-white min-[1850px]:text-[120px] min-[1600px]:text-[102px] min-[1400px]:text-[85px] text-5xl min-[1030px]:text-[65px] max-[385px]:text-[40px] font-['Michroma'] min-[1700px]:leading-[140px] min-[1400px]:leading-[85px] min-[992px]:leading-[85px] leading-[60px] min-[992px]:pb-[66px] pb-10" style={{ borderBottom: '1px solid #DEE0E2' }}>Meridian</h1>
+                        <div className="text-white min-[1850px]:text-[120px] min-[1600px]:text-[102px] min-[1400px]:text-[85px] text-5xl min-[1030px]:text-[65px] max-[385px]:text-[40px] font-['Michroma'] min-[1700px]:leading-[140px] min-[1400px]:leading-[85px] min-[992px]:leading-[85px] leading-[60px] min-[992px]:pb-[66px] pb-10" style={{ borderBottom: '1px solid #DEE0E2' }}>Meridian</div>
 
                         <div className='flex items-center relative z-1 justify-between min-[1600px]:mt-[81px] min-[992px]:mt-[60px] mt-10 gap-14 max-[992px]:flex-col max-[992px]:items-start max-[992px]:gap-5'>
 
@@ -124,10 +124,10 @@ const page = () => {
                 </div>
             </section>
 
-            <section className="clients_feedback relative pt-[107px] pb-15 min-[1400px]:px-[87px] px-14 max-[768px]:px-8">
+            <section className="clients_feedback relative pt-[107px] pb-15 min-[992px]:px-[87px] px-10 max-[576px]:px-6">
                 <div className="container max-w-full z-1 relative">
 
-                    <div className='card rounded-[53px] p-[34px] mb-[107px]' style={{
+                    <div className='card rounded-[53px] p-[34px] mb-[107px] max-[768px]:mb-[50px] max-[576px]:p-6' style={{
                         boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45'
                     }}>
                         <div className='flex items-center justify-between mb-12 '>
@@ -137,7 +137,7 @@ const page = () => {
                             </div>
                             <p>/</p>
                             <div>
-                                <Link href={''} className='flex items-center gap-10'>Live Website
+                                <Link href={'/'} aria-label="Live website" className='flex items-center gap-10'>Live Website
                                     <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M16.6001 5.59961L11.6001 0.599609M16.6001 5.59961L11.6001 10.5996M16.6001 5.59961H0.600098" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
@@ -146,7 +146,7 @@ const page = () => {
                             </div>
                         </div>
 
-                        <div className="justify-center min-[1250px]:w-[1160px] text-white text-2xl min-[992px]:text-3xl min-[1200px]:text-4xl font-normal font-['Michroma'] min-[1400px]:pb-[106px] pb-15 leading-[48px]">Staged for the stratosphere the new Meridian website & brand went viral on launch, resulting in massive demand for trial requests of the platform. Our design & development was robust and intentionally scalable, blending a unique identity with a back end to support the ambitious plans for expansion.
+                        <div className="justify-center min-[1250px]:w-[1160px] text-white text-2xl min-[992px]:text-3xl min-[1200px]:text-4xl font-normal font-['Michroma'] min-[1400px]:pb-[106px] pb-15 leading-[48px] max-[576px]:leading-[35px] max-[576px]:text-lg">Staged for the stratosphere the new Meridian website & brand went viral on launch, resulting in massive demand for trial requests of the platform. Our design & development was robust and intentionally scalable, blending a unique identity with a back end to support the ambitious plans for expansion.
                         </div>
 
                         <div className='grid max-[700px]:grid-cols-[0.8fr_1.2fr_1.0fr] pt-3 min-[700px]:grid-cols-[0.8fr_0.6fr_1.6fr] mt-[10px]'  style={{ borderTop: '1px solid #42474C' }}>
@@ -178,7 +178,7 @@ const page = () => {
                                     <img src={item.img} width={65} height={65} alt={item.name} />
 
                                     <div>
-                                        <h6 className="text-white text-lg font-medium">{item.name}</h6>
+                                        <div className="text-white text-lg font-medium">{item.name}</div>
                                         <div className="justify-center text-gray-500 text-[12px] mt-2 font-medium leading-3">{item.profession}</div>
                                     </div>
                                 </div>

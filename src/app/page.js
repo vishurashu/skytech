@@ -43,22 +43,22 @@ export default function Home() {
 
   const statistics = [
     {
-      img: '/project_stat.png',
+      img: '/project_stat.webp',
       number: '25+',
       title: 'Projects Completed'
     },
     {
-      img: '/clients_stat.png',
+      img: '/clients_stat.webp',
       number: '15+',
       title: 'Happy Clients'
     },
     {
-      img: '/creators_stat.png',
+      img: '/creators_stat.webp',
       number: '5+',
       title: 'Digital Creators'
     },
     {
-      img: '/innovation_stat.png',
+      img: '/innovation_stat.webp',
       number: '100%',
       title: 'Passion for Innovation'
     },
@@ -244,12 +244,12 @@ export default function Home() {
               <div className=" text-white font-bold font-['Inter'] leading-5">Discover our Story</div>
             </div>
 
-            <div className=" text-white mt-4 max-[576px]:mt-1 text-4xl min-[780px]:text-6xl min-[1200px]:text-7xl font-normal font-['Michroma'] leading-[88px]">About Us</div>
-            <p className="text-white mt-7 max-[576px]:mt-2 text-lg">SKYNETECH is a growing digital agency built for the new generation of brands. We combine creativity, technology, and strategy to design digital experiences that help businesses launch, scale, and stand out. As a startup team, we move fast, adapt quickly, and focus on building smart solutions that create real impact. From websites and applications to branding and digital content, our goal is simple   help businesses grow in the digital world.</p>
+            <div className=" text-white mt-4 max-[576px]:mt-1 text-4xl min-[780px]:text-6xl min-[1200px]:text-7xl font-normal font-['Michroma'] leading-[88px} max-[576px]:leading-[65px]">About Us</div>
+            <p className="text-white mt-7 max-[576px]:mt-2 text-lg max-[576px]:text-base">SKYNETECH is a growing digital agency built for the new generation of brands. We combine creativity, technology, and strategy to design digital experiences that help businesses launch, scale, and stand out. As a startup team, we move fast, adapt quickly, and focus on building smart solutions that create real impact. From websites and applications to branding and digital content, our goal is simple   help businesses grow in the digital world.</p>
 
             <div className="grid min-[1300px]:grid-cols-[2.2fr_0.8fr] min-[1100px]:grid-cols-[1.8fr_1.2fr] gap-4 mt-10 z-1 relative">
               <div>
-                <img src="/about_us.png" alt="About us" />
+                <img src="/about_us.webp" alt="About us" width={1112} height={602}/>
               </div>
               <div className="grid grid-rows-3 max-[1100px]:gap-y-5">
                 {about.map((item, index) => (
@@ -285,11 +285,11 @@ export default function Home() {
               <div className="grid grid-cols-1 mt-6">
                 <div className="card min-[1200px]:px-15 px-10 max-[576px]:p-6 relative z-2 py-10 bg-black/0 rounded-[40px] max-[1000px]:flex-col flex justify-between min-[1100px]:items-center promotion max-[1100px]:gap-6">
                   <div className="">
-                    <h2 className="text-white text-2xl min-[780px]:text-3xl min-[1200px]:text-4xl font-normal font-['Michroma'] leading-[48px]">Ready to grow your brand digitally?</h2>
-                    <p className="text-white text-lg leading-7 mt-2">Let's work together to create something impactful.</p>
+                    <div className="text-white text-2xl min-[780px]:text-3xl min-[1200px]:text-4xl font-normal font-['Michroma'] leading-[48px] max-[576px]:leading-[40px]">Ready to grow your brand digitally?</div>
+                    <p className="text-white text-lg leading-7 mt-2 max-[576px]:text-base">Let's work together to create something impactful.</p>
                   </div>
 
-                  <Link href={'/contact'}>
+                  <Link href={'/contact'} aria-label="Get in Touch">
                     <img src="/getinTouch_2.svg" alt="Get in Touch" />
                   </Link>
                 </div>
@@ -303,9 +303,9 @@ export default function Home() {
 
         <section className="services relative min-[992px]:px-[87px] px-10 max-[576px]:px-6">
           <div className="container relative z-1 max-w-full">
-            <h2 className="text-white text-3xl min-[780px]:text-4xl min-[1200px]:text-6xl font-normal leading-[45px] min-[780px]:leading-[55px] min-[1200px]:leading-[76px]">We don't just build digital products, we create experiences that help brands grow.</h2>
+            <div className="text-white text-3xl min-[780px]:text-4xl min-[1200px]:text-6xl font-['Michroma'] font-normal leading-[45px] min-[780px]:leading-[55px] min-[1200px]:leading-[76px]">We don't just build digital products, we create experiences that help brands grow.</div>
 
-            <p className=" text-white text-lg font-medium font-['Inter'] leading-7 mt-7 mb-16">At SKYNETECH, we combine design, technology, and strategy to help startups and businesses launch powerful digital experiences.</p>
+            <p className=" text-white text-lg font-medium font-['Inter'] leading-7 mt-7 mb-16 max-[576px]:text-base max-[576px]:mb-10">At SKYNETECH, we combine design, technology, and strategy to help startups and businesses launch powerful digital experiences.</p>
 
             <div className="grid grid-cols-1 max-[1100px]:grid-cols-2 max-[768px]:grid-cols-1 gap-6">
               {services.map((item, index) => (
@@ -315,26 +315,26 @@ export default function Home() {
                       <img src={item.img} className="max-[768px]:w-full max-[768px]:px-1" alt={item.heading} />
                     </div>
 
-                    <div className="flex items-start min-[1600px]:mt-12 max-[1600px]:mt-8 ps-5 max-[1400px]:mt-1 max-[1100px]:mt-4">
-                      <h3 className="text-white font-normal text-3xl min-[1280px]:text-4xl min-[1580px]:text-5xl font-['Michroma'] leading-[44px] min-[1280px]:leading-[58px] min-[1580px]:leading-[68px]">
+                    <div className="flex items-start min-[1600px]:mt-12 max-[1600px]:mt-8 ps-5 max-[1400px]:mt-1 max-[1100px]:mt-4 max-[576px]:px-2">
+                      <div className="text-white font-normal text-3xl min-[1280px]:text-4xl min-[1580px]:text-5xl font-['Michroma'] leading-[44px] min-[1280px]:leading-[58px] min-[1580px]:leading-[68px] ">
                         {item.heading}<br />
-                      </h3>
+                      </div>
                     </div>
 
-                    <div className="flex items-start justify-start max-[1100px]:mt-6 max-[1600px]:mt-8 min-[1600px]:mt-12 flex-col px-6">
-                      <p className="self-stretch text-white text-lg font-medium leading-7">
+                    <div className="flex items-start justify-start max-[1100px]:mt-6 max-[1600px]:mt-8 min-[1600px]:mt-12 flex-col px-6 max-[576px]:px-2">
+                      <p className="self-stretch text-white text-lg font-medium leading-7 max-[576px]:text-base">
                         {item.content}
                       </p>
 
                       <div className="mt-9 max-[1100px]:mt-6">
-                        <Link href={item.path}>
+                        <Link href={item.path} aria-label={`Learn more about ${item.heading}`}>
                           <img src="/learn_more.svg" alt="Learn more" />
                         </Link>
                       </div>
                     </div>
 
                     <div className="flex justify-end max-[1100px]:hidden">
-                      <img src={item.img} className="" alt={item.heading} />
+                      <img src={item.img} className="" alt={item.heading} width={403} height={308}/>
                     </div>
                   </div>
                 </div>
@@ -378,12 +378,12 @@ export default function Home() {
               <div className="grid grid-cols-1 mt-6">
                 <div className="flex justify-between items-start gap-y-5 min-[1000px]:items-end min-[1000px]:flex-row flex-col">
                   <div className="">
-                    <h2 className="text-white max-[576px]:text-4xl min-[780px]:text-4xl min-[1200px]:text-6xl font-normal font-['Michroma'] max-[576px]:leading-[53px] leading-[88px]">Recent Digital Creations</h2>
-                    <p className="text-white text-lg leading-7 mt-8">Innovative platforms, brand experiences, and digital products designed to help modern businesses grow.</p>
+                    <div className="text-white max-[576px]:text-4xl min-[780px]:text-4xl min-[1200px]:text-6xl font-normal font-['Michroma'] max-[576px]:leading-[53px] leading-[88px]">Recent Digital Creations</div>
+                    <p className="text-white text-lg leading-7 mt-8 max-[576px]:text-base">Innovative platforms, brand experiences, and digital products designed to help modern businesses grow.</p>
                   </div>
 
-                  <Link href={'/portfolio'}>
-                    <img src="/viewAll.svg" alt="Get in Touch" />
+                  <Link href={'/portfolio'} aria-label="View all projects">
+                    <img src="/viewAll.svg" alt="View all projects" />
                   </Link>
                 </div>
               </div>
@@ -399,13 +399,13 @@ export default function Home() {
                   setActive(index);
                 }}
                 onMouseLeave={() => isDesktop && setActive(null)}
-                className={`border-t overflow-hidden border-b min-[1400px]:px-[87px] px-14 max-[768px]:px-8 relative py-10 min-[1200px]:py-16 transition-all duration-500 ${active === index ? "border-red-500" : "border-gray-500"}`}>
+                className={`border-t overflow-hidden border-b min-[992px]:px-[87px] px-10 max-[576px]:px-6 relative py-10 min-[1200px]:py-16 transition-all duration-500 ${active === index ? "border-red-500" : "border-gray-500"}`}>
                 <div className="container max-w-full">
                   <div className="grid relative z-1 min-[1400px]:grid-cols-[1.2fr_1.2fr_0.6fr] min-[1000px]:grid-cols-[0.9fr_1.5fr_0.6fr] grid-cols-1">
 
-                    <h5 className="text-white text-3xl min-[780px]:text-4xl min-[1200px]:text-6xl font-normal font-['Michroma'] leading-[56px] min-[1200px]:leading-[76px]">
+                    <div className="text-white text-3xl min-[780px]:text-4xl min-[1200px]:text-6xl font-normal font-['Michroma'] leading-[56px] min-[1200px]:leading-[76px]">
                       {project.title}
-                    </h5>
+                    </div>
 
                     <p className="w-[450px] hidden min-[1000px]:block text-white text-lg font-medium leading-7">
                       {project.description}
@@ -429,7 +429,7 @@ export default function Home() {
                       }`}
                   >
                     <div className="max-[992px]:mt-3 relative z-2">
-                      <Link href={"/detail"}>
+                      <Link href={"/detail"}  aria-label={`Learn more about ${project.title}`}>
                         <div className=" min-[992px]:p-5 p-4 bg-black/0 rounded-[31px] inline-flex justify-center items-center gap-2.5 w-auto"
                           style={{
                             boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45'
@@ -493,7 +493,7 @@ export default function Home() {
 
         </section>
 
-        <section className="clients_feedback relative pb-15 min-[1400px]:px-[87px] px-14 max-[768px]:px-8">
+        <section className="clients_feedback relative pb-15 min-[992px]:px-[87px] px-10 max-[576px]:px-6">
           <div className="container max-w-full z-1 relative">
             <div className="p-4 bg-black/0 rounded-[40px] inline-flex justify-center items-center gap-2.5" style={{
               boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45'
@@ -515,7 +515,7 @@ export default function Home() {
                     <img src={item.img} width={65} height={65} alt={item.name} />
 
                     <div>
-                      <h6 className="text-white text-lg font-medium">{item.name}</h6>
+                      <div className="text-white text-lg font-medium">{item.name}</div>
                       <div className="justify-center text-gray-500 text-[12px] mt-2 font-medium leading-3">{item.profession}</div>
                     </div>
                   </div>

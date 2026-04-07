@@ -24,6 +24,7 @@ body {
   height: auto;
   scroll-behavior: smooth;
   position: relative;
+  overflow-x: hidden;
 }
 
 * {
@@ -740,7 +741,7 @@ input {
 
   .services-circle-2 {
     top: 960px;
-    right: 0;
+    right: 30px;
   }
 
   .fade-left,

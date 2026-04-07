@@ -113,9 +113,9 @@ const page = () => {
             <section className="header_banner relative">
                 <Image src="/portfolioHero.png" alt="About us" width={1920} height={650} className='w-full h-full object-cover max-[1300px]:h-[450px]' />
 
-                <div className='absolute bottom-0 w-full min-[1400px]:pb-10 pb-8 min-[1400px]:px-[87px] px-14 max-[768px]:px-8'>
+                <div className='absolute bottom-0 w-full min-[1400px]:pb-10 pb-8 min-[992px]:px-[87px] px-10 max-[576px]:px-6'>
                     <div className='container max-w-full'>
-                        <h1 className="text-white min-[1850px]:text-[120px] min-[1600px]:text-[102px] min-[1400px]:text-[85px] text-5xl min-[1030px]:text-[65px] max-[670px]:text-[40px] max-[500px]:text-[30px] font-['Michroma'] min-[1700px]:leading-[140px] min-[1400px]:leading-[115px] min-[992px]:leading-[85px] leading-[60px] max-[500px]:leading-[45px] min-[992px]:w-full min-[768px]:w-[700px]">Crafting Meaningful Digital Products</h1>
+                        <div className="text-white min-[1850px]:text-[120px] min-[1600px]:text-[102px] min-[1400px]:text-[85px] text-5xl min-[1030px]:text-[65px] max-[670px]:text-[40px] max-[500px]:text-[30px] font-['Michroma'] min-[1700px]:leading-[140px] min-[1400px]:leading-[115px] min-[992px]:leading-[85px] leading-[60px] max-[500px]:leading-[45px] min-[992px]:w-full min-[768px]:w-[700px]">Crafting Meaningful Digital Products</div>
 
                         <div className='flex items-center relative z-1 justify-between min-[1600px]:mt-[30px] min-[992px]:mt-[30px] mt-5 gap-14 max-[992px]:flex-col max-[992px]:items-start max-[992px]:gap-5'>
                             <p className="w-full max-w-[1250px] justify-start text-white min-[992px]:font-semibold font-medium leading-5">Branding, web design, Webflow, creative development, and beyond—focused on clarity, performance, and user experience.</p>
@@ -134,13 +134,13 @@ const page = () => {
                                 setActive(index);
                             }}
                             onMouseLeave={() => isDesktop && setActive(null)}
-                            className={`border-t overflow-hidden border-b min-[1400px]:px-[87px] px-14 max-[768px]:px-8 relative py-10 min-[1200px]:py-16 transition-all duration-500 ${active === index ? "border-red-500" : "border-gray-500"}`}>
+                            className={`border-t overflow-hidden border-b min-[992px]:px-[87px] px-10 max-[576px]:px-6 relative py-10 min-[1200px]:py-16 transition-all duration-500 ${active === index ? "border-red-500" : "border-gray-500"}`}>
                             <div className="container max-w-full">
                                 <div className="grid relative z-1 min-[1400px]:grid-cols-[1.2fr_1.2fr_0.6fr] min-[1000px]:grid-cols-[0.9fr_1.5fr_0.6fr] grid-cols-1">
 
-                                    <h5 className="text-white text-3xl min-[780px]:text-4xl min-[1200px]:text-6xl font-normal font-['Michroma'] leading-[56px] min-[1200px]:leading-[76px]">
+                                    <div className="text-white text-3xl min-[780px]:text-4xl min-[1200px]:text-6xl font-normal font-['Michroma'] leading-[56px] min-[1200px]:leading-[76px]">
                                         {project.title}
-                                    </h5>
+                                    </div>
 
                                     <p className="w-[450px] hidden min-[1000px]:block text-white text-lg font-medium leading-7">
                                         {project.description}
@@ -164,7 +164,7 @@ const page = () => {
                                         }`}
                                 >
                                     <div className="max-[992px]:mt-3 relative z-2">
-                                        <Link href={"/detail"}>
+                                        <Link href={"/detail"} aria-label={`Learn more about ${project.title}`}>
                                             <div className=" min-[992px]:p-5 p-4 bg-black/0 rounded-[31px] inline-flex justify-center items-center gap-2.5 w-auto"
                                                 style={{
                                                     boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45'
@@ -230,7 +230,7 @@ const page = () => {
 
             </section>
 
-            <section className="clients_feedback relative pb-15 min-[1400px]:px-[87px] px-14 max-[768px]:px-8">
+            <section className="clients_feedback relative pb-15 min-[992px]:px-[87px] px-10 max-[576px]:px-6">
                 <div className="container max-w-full z-1 relative">
                     <div className="p-4 bg-black/0 rounded-[40px] inline-flex justify-center items-center gap-2.5" style={{
                         boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45'
@@ -252,7 +252,7 @@ const page = () => {
                                     <img src={item.img} width={65} height={65} alt={item.name} />
 
                                     <div>
-                                        <h6 className="text-white text-lg font-medium">{item.name}</h6>
+                                        <div className="text-white text-lg font-medium">{item.name}</div>
                                         <div className="justify-center text-gray-500 text-[12px] mt-2 font-medium leading-3">{item.profession}</div>
                                     </div>
                                 </div>
