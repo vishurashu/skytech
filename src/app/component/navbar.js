@@ -29,7 +29,7 @@ const Navbar = () => {
                     <div className="link_section rounded-[123px]">
                         <div className="flex min-[992px]:justify-start justify-between items-center gap-6">
                             <Link href="/" className="logo">
-                                <Image src="/main_logo.svg" alt="Skynetech" width={200} height={80} className="relative" priority />
+                                <Image src="/main_logo.svg" alt="Skynetech" width={200} height={80} className="relative" />
                             </Link>
 
                             <ul className="flex-1 max-[992px]:hidden flex justify-center items-center gap-12 m-0 p-0">
@@ -59,7 +59,7 @@ const Navbar = () => {
                             </ul>
 
                             <Link href={'/contact'} className="main_btn max-[992px]:hidden">
-                                <Image src="/getInTouch_btn.svg" alt="Get in touch" width={130} height={50} className="relative" priority />
+                                <Image src="/getInTouch_btn.svg" alt="Get in touch" width={130} height={50} className="relative" />
                             </Link>
                             
                             <div className="min-[992px]:hidden cursor-pointer" onClick={() => setOpen(true)}>
