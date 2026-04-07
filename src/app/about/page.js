@@ -1,5 +1,15 @@
-import React from 'react'
 import Image from 'next/image'
+
+export const metadata = {
+  title: "About Us",
+  description:
+    "Learn about SKYNETECH — a modern digital agency combining creativity, technology, and strategy to help startups and businesses grow online.",
+  openGraph: {
+    title: "About Us | SKYNETECH",
+    description:
+      "A modern digital agency built for the next generation of businesses. We blend creative design, advanced development, and strategic thinking.",
+  },
+};
 
 const page = () => {
 
@@ -57,7 +67,7 @@ const page = () => {
   return (
     <main className='relative wholeBg'>
       <section className="header_banner relative">
-        <Image src="/aboutHero.png" alt="About us" width={1920} height={1080} className='w-full h-full object-cover max-[1100px]:h-[600px]' />
+        <Image src="/aboutHero.png" alt="About SKYNETECH digital agency" width={1920} height={1080} priority className='w-full h-full object-cover max-[1100px]:h-[600px]' />
 
         <div className='absolute bottom-0 w-full min-[1400px]:pb-20 min-[992px]:pb-10 pb-6 min-[1400px]:px-[87px] px-14 max-[768px]:px-8'>
           <div className='container max-w-full'>
@@ -121,7 +131,7 @@ const page = () => {
                   {companyAbout.map((item, index) => (
                     <div className='card min-[1900px]:pt-[30px] min-[1750px]:pt-[24px] px-[10px] pt-[22px] pb-[9px] rounded promotion' key={index}>
                       <div className='flex justify-start items-center gap-4'>
-                        <h2 className="justify-start text-[#E30613] text-4xl font-normal font-['Michroma'] leading-[48px]">{item.number}</h2>
+                        <span className="justify-start text-[#E30613] text-4xl font-normal font-['Michroma'] leading-[48px]">{item.number}</span>
                         <div className="justify-start text-white font-['Inter'] text-3xl font-medium leading-9">{item.title}</div>
                       </div>
 
@@ -167,4 +177,4 @@ const page = () => {
   )
 }
 
-export default page
+export default page;

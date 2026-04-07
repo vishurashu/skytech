@@ -1,5 +1,15 @@
-import React from 'react'
 import Image from 'next/image'
+
+export const metadata = {
+  title: "Contact Us",
+  description:
+    "Get in touch with SKYNETECH. Start your digital project today — web design, branding, development, and creative media services.",
+  openGraph: {
+    title: "Contact Us | SKYNETECH",
+    description:
+      "Let's create something amazing together. Contact SKYNETECH for web design, development, and digital branding services.",
+  },
+};
 
 const page = () => {
 
@@ -33,7 +43,7 @@ const page = () => {
   return (
     <main className='relative wholeBg'>
       <section className="header_banner relative">
-        <Image src="/serviceHero.png" alt="About us" width={1920} height={650} className='w-full h-full object-cover max-[1300px]:h-[450px]' />
+        <Image src="/serviceHero.png" alt="Contact SKYNETECH digital agency" width={1920} height={650} priority className='w-full h-full object-cover max-[1300px]:h-[450px]' />
 
         <div className='absolute bottom-0 w-full min-[1400px]:pb-20 min-[992px]:pb-14 pb-8 min-[1400px]:px-[87px] px-14 max-[768px]:px-8'>
           <div className='container max-w-full'>

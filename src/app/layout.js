@@ -14,7 +14,60 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Skynetech",
+  title: {
+    default: "SKYNETECH — Digital Agency for Modern Brands",
+    template: "%s | SKYNETECH",
+  },
+  description:
+    "SKYNETECH is a modern digital agency specializing in brand strategy, web design, web development, and creative media for startups and growing businesses.",
+  keywords: [
+    "digital agency",
+    "web design",
+    "web development",
+    "brand strategy",
+    "UI UX design",
+    "Next.js agency",
+    "startup agency",
+    "SKYNETECH",
+  ],
+  authors: [{ name: "SKYNETECH" }],
+  creator: "SKYNETECH",
+  metadataBase: new URL("https://skytech-dga.pages.dev"),
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://skytech-dga.pages.dev",
+    siteName: "SKYNETECH",
+    title: "SKYNETECH — Digital Agency for Modern Brands",
+    description:
+      "We combine creativity, technology, and strategy to design digital experiences that help businesses launch, scale, and stand out.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "SKYNETECH Digital Agency",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SKYNETECH — Digital Agency for Modern Brands",
+    description:
+      "We combine creativity, technology, and strategy to design digital experiences that help businesses launch, scale, and stand out.",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({ children }) {
