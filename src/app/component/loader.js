@@ -36,7 +36,7 @@ export default function loader({ onFinish }) {
       }}
     >
       <h1
-        className="text-[60px] min-[1400px]:text-[120px] min-[768px]:text-[90px] font-bold text-gray-600"
+        className="tabular-nums text-[60px] min-[1400px]:text-[120px] min-[768px]:text-[90px] font-bold text-gray-600"
         style={{ willChange: "transform" }} 
       >
         <span ref={numberRef}>0</span>

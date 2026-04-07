@@ -273,13 +273,13 @@ export default function Home() {
 
             <div className="grid min-[1300px]:grid-cols-[2.2fr_0.8fr] min-[1100px]:grid-cols-[1.8fr_1.2fr] gap-4 mt-10 z-1 relative">
               <div>
-                <img src="/about_us.png" alt="About us" loading="lazy" />
+                <img src="/about_us.png" alt="About us" width="600" height="500" style={{ width: '100%', height: 'auto' }} loading="lazy" />
               </div>
               <div className="grid grid-rows-3 max-[1100px]:gap-y-5">
                 {about.map((item, index) => (
                   <div key={index}>
                     <div className="flex items-center gap-2">
-                      <img src={item.img} alt="" loading="lazy" />
+                      <img src={item.img} alt="" width="53" height="54" loading="lazy" />
                       <div className=" text-white text-xl font-bold leading-6">{item.title}</div>
                     </div>
                     <p className=" text-white mt-2 text-base font-light leading-6">{item.content}</p>
@@ -298,7 +298,7 @@ export default function Home() {
                 {statistics.map((item, index) => (
                   <div className="card px-16 py-6 bg-black/0 rounded-[40px]" key={index}>
                     <div className="text-center">
-                      <Image src={item.img} alt={item.title} className="mx-auto w-[60px] h-[60px]" width={60} height={60} />
+                      <img src={item.img} className="mx-auto" alt={item.title} width="64" height="64" loading="lazy" />
                       <div className="text-center text-white min-[700px]:text-4xl text-3xl font-normal font-['Michroma'] leading-[48px] mt-3">{item.number}</div>
                       <p className="text-center font-light text-white text-base leading-6 mt-1">{item.title}</p>
                     </div>
@@ -314,7 +314,7 @@ export default function Home() {
                   </div>
 
                   <Link href={'/contact'}>
-                    <img src="/getinTouch_2.svg" alt="Get in Touch" loading="lazy" />
+                    <img src="/getinTouch_2.svg" alt="Get in Touch" width="137" height="62" loading="lazy" />
                   </Link>
                 </div>
               </div>
@@ -336,7 +336,7 @@ export default function Home() {
                 <div key={index} className="card p-2.5 bg-black/0 rounded-[53px] max-[576px]:rounded-[24px] relative services_card">
                   <div className="grid min-[1100px]:grid-cols-[1.0fr_1.2fr_0.8fr] grid-cols-1 max-[1100px]:pb-5 pt-2 items-start min-[1280px]:items-center max-[1400px]:items-center min-[1400px]:items-start">
                     <div className="hidden justify-center max-[1100px]:flex ">
-                      <img src={item.img} className="max-[768px]:w-full max-[768px]:px-1" alt={item.heading} loading="lazy" />
+                      <img src={item.img} className="max-[768px]:w-full max-[768px]:px-1" alt={item.heading} width="441" height="348" style={{ height: 'auto' }} loading="lazy" />
                     </div>
 
                     <div className="flex items-start min-[1600px]:mt-12 max-[1600px]:mt-8 ps-5 max-[1400px]:mt-1 max-[1100px]:mt-4">
@@ -358,7 +358,7 @@ export default function Home() {
                     </div>
 
                     <div className="flex justify-end max-[1100px]:hidden">
-                      <img src={item.img} className="" alt={item.heading} loading="lazy" />
+                      <img src={item.img} className="" alt={item.heading} width="441" height="348" style={{ height: 'auto' }} loading="lazy" />
                     </div>
                   </div>
                 </div>

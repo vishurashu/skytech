@@ -157,7 +157,7 @@ const page = () => {
                   </div>
 
                   <button>
-                    <img src="/getinTouch_2.svg" alt="Get in Touch" />
+                    <img src="/getinTouch_2.svg" alt="Get in Touch" width="137" height="62" />
                   </button>
                 </div>
               </div>
