@@ -164,7 +164,7 @@ const page = () => {
                                         }`}
                                 >
                                     <div className="max-[992px]:mt-3 relative z-2">
-                                        <Link href={"/detail"} aria-label={`Learn more about ${project.title}`}>
+                                        <Link href={"/detail"}>
                                             <div className=" min-[992px]:p-5 p-4 bg-black/0 rounded-[31px] inline-flex justify-center items-center gap-2.5 w-auto"
                                                 style={{
                                                     boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45'
@@ -249,7 +249,7 @@ const page = () => {
                                 </p>
 
                                 <div className="mt-7 flex items-center gap-3">
-                                    <Image src={item.img} width={65} height={65} alt={item.name} />
+                                    <img src={item.img} width={65} height={65} alt={item.name} />
 
                                     <div>
                                         <h6 className="text-white text-lg font-medium">{item.name}</h6>

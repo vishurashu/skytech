@@ -273,7 +273,7 @@ export default function Home() {
 
             <div className="grid min-[1300px]:grid-cols-[2.2fr_0.8fr] min-[1100px]:grid-cols-[1.8fr_1.2fr] gap-4 mt-10 z-1 relative">
               <div>
-                <Image src="/about_us.png" alt="About us" width={600} height={500} style={{ width: '100%', height: 'auto' }} />
+                <img src="/about_us.png" alt="About us" width="600" height="500" style={{ width: '100%', height: 'auto' }} loading="lazy" />
               </div>
               <div className="grid grid-rows-3 max-[1100px]:gap-y-5">
                 {about.map((item, index) => (
@@ -453,7 +453,7 @@ export default function Home() {
                       }`}
                   >
                     <div className="max-[992px]:mt-3 relative z-2">
-                      <Link href={"/detail"} aria-label={`Learn more about ${project.title}`}>
+                      <Link href={"/detail"}>
                         <div className=" min-[992px]:p-5 p-4 bg-black/0 rounded-[31px] inline-flex justify-center items-center gap-2.5 w-auto"
                           style={{
                             boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45'
@@ -536,7 +536,7 @@ export default function Home() {
                   </p>
 
                   <div className="mt-7 flex items-center gap-3">
-                    <Image src={item.img} width={65} height={65} alt={item.name} />
+                    <img src={item.img} width={65} height={65} alt={item.name} loading="lazy" />
 
                     <div>
                       <h6 className="text-white text-lg font-medium">{item.name}</h6>
