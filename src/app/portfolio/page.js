@@ -3,27 +3,18 @@
 import React from 'react';
 import Link from "next/link";
 import Image from 'next/image';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 
 const page = () => {
 
     const [active, setActive] = useState(null);
     const [isDesktop, setIsDesktop] = useState(false);
 
-    useEffect(() => {
-        const checkScreen = () => {
-            setIsDesktop(window.innerWidth >= 992);
-        };
-
-        checkScreen();
-        window.addEventListener("resize", checkScreen);
-
-        return () => window.removeEventListener("resize", checkScreen);
-    }, []);
-
     const projects = [
         {
+            slug: "meridian",
             title: "Meridian",
             description:
                 "An AI-powered analytics platform designed to help brands understand how AI is influencing their digital presence.",
@@ -35,6 +26,7 @@ const page = () => {
             ],
         },
         {
+            slug: "heimdall-power",
             title: "Heimdall Power",
             description:
                 "A modern digital platform created to present Heimdall Power’s technology.",
@@ -52,6 +44,7 @@ const page = () => {
             ],
         },
         {
+            slug: "cula",
             title: "Cula",
             description:
                 "A futuristic digital experience designed to explore carbon management solutions through immersive visuals, interactive dashboards, and modern product storytelling.",
@@ -63,6 +56,7 @@ const page = () => {
             ],
         },
         {
+            slug: "arqitel",
             title: "Arqitel",
             description:
                 "A visually driven website experience that showcases architectural innovation through immersive layouts, interactive elements, and modern web technology.",
@@ -108,6 +102,60 @@ const page = () => {
         },
     ]
 
+    useEffect(() => {
+        const checkScreen = () => {
+            setIsDesktop(window.innerWidth >= 992);
+        };
+
+        checkScreen();
+        window.addEventListener("resize", checkScreen);
+
+        return () => {
+            window.removeEventListener("resize", checkScreen);
+            clearTimeout(timer);
+        };
+    }, []);
+
+    const itemRefs = useRef([]);
+    const [heights, setHeights] = useState([]);
+
+    useEffect(() => {
+        const measured = itemRefs.current.map((el) => el?.scrollHeight || 0);
+        setHeights(measured);
+
+        const handleResize = () => {
+            const remeasured = itemRefs.current.map((el) => el?.scrollHeight || 0);
+            setHeights(remeasured);
+        };
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    const router = useRouter();
+    const cursorRef = useRef(null);
+    const cursorPosRef = useRef({ x: 0, y: 0 });
+    const targetPosRef = useRef({ x: 0, y: 0 });
+    const rafRef = useRef(null);
+    const [hoveredProject, setHoveredProject] = useState(null);
+
+    useEffect(() => {
+        const lerp = (start, end, factor) => start + (end - start) * factor;
+
+        const animate = () => {
+            cursorPosRef.current.x = lerp(cursorPosRef.current.x, targetPosRef.current.x, 0.12);
+            cursorPosRef.current.y = lerp(cursorPosRef.current.y, targetPosRef.current.y, 0.12);
+
+            if (cursorRef.current) {
+                cursorRef.current.style.transform = `translate(${cursorPosRef.current.x}px, ${cursorPosRef.current.y}px)`;
+            }
+
+            rafRef.current = requestAnimationFrame(animate);
+        };
+
+        rafRef.current = requestAnimationFrame(animate);
+        return () => cancelAnimationFrame(rafRef.current);
+    }, []);
+
     return (
         <main className='relative wholeBg'>
             <section className="header_banner relative">
@@ -132,12 +180,49 @@ const page = () => {
                             onMouseEnter={() => {
                                 if (!isDesktop) return;
                                 setActive(index);
+                                setHoveredProject(index);
                             }}
-                            onMouseLeave={() => isDesktop && setActive(null)}
-                            className={`border-t overflow-hidden border-b min-[992px]:px-[87px] px-10 max-[576px]:px-6 relative py-10 min-[1200px]:py-16 transition-all duration-500 ${active === index ? "border-red-500" : "border-gray-500"}`}>
+                            onMouseLeave={() => {
+                                if (!isDesktop) return;
+                                setActive(null);
+                                setHoveredProject(null);
+                            }}
+                            onMouseMove={(e) => {
+                                if (!isDesktop) return;
+                                const rect = e.currentTarget.getBoundingClientRect();
+                                targetPosRef.current = {
+                                    x: e.clientX - rect.left - 75, // offset by half button width
+                                    y: e.clientY - rect.top - 24,  // offset by half button height
+                                };
+                            }}
+                            onClick={() => router.push(`/detail/${project.slug}`)}
+                            className={`border-t  bg-[#140505] z-2 overflow-hidden border-b min-[992px]:px-[87px] px-10 max-[576px]:px-6 relative py-10 min-[1200px]:py-16 transition-colors duration-500 cursor-none ${active === index ? "border-red-500" : "border-gray-500"
+                                }`}
+                        >
+                            <div className="max-[768px]:hidden">
+                                {hoveredProject === index && isDesktop && (
+                                    <div
+                                        ref={cursorRef}
+                                        className="absolute z-50 pointer-events-none top-0 left-0"
+                                        style={{ willChange: "transform" }}
+                                    >
+                                        <div
+                                            className="flex items-center gap-2 text-white text-base font-bold leading-5 px-6 py-4 rounded-[31px]"
+                                            style={{
+                                                boxShadow: "0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45",
+                                                background: "rgba(0,0,0,0.4)",
+                                                backdropFilter: "blur(8px)",
+                                                WebkitBackdropFilter: "blur(8px)",
+                                            }}
+                                        >
+                                            Learn more <FaArrowRightLong />
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+
                             <div className="container max-w-full">
                                 <div className="grid relative z-1 min-[1400px]:grid-cols-[1.2fr_1.2fr_0.6fr] min-[1000px]:grid-cols-[0.9fr_1.5fr_0.6fr] grid-cols-1">
-
                                     <div className="text-white text-3xl min-[780px]:text-4xl min-[1200px]:text-6xl font-normal font-['Michroma'] leading-[56px] min-[1200px]:leading-[76px]">
                                         {project.title}
                                     </div>
@@ -152,88 +237,78 @@ const page = () => {
                                         ))}
                                         <li className="mt-7">{project.location}</li>
                                     </ul>
-
                                 </div>
 
+                                {/* Smooth real-height animation */}
                                 <div
-                                    className={`projects_image relative flex flex-col max-[992px]:flex-col-reverse transition-all duration-500 ease-in-out ${isDesktop
-                                        ? active === index
-                                            ? "max-h-[900px] opacity-100 mt-6"
-                                            : "max-h-0 opacity-0"
-                                        : "max-h-[900px] opacity-100 mt-6"
-                                        }`}
+                                    style={{
+                                        height: isDesktop
+                                            ? active === index
+                                                ? `${heights[index] || 0}px`
+                                                : "0px"
+                                            : `${heights[index] || 0}px`,
+                                        opacity: isDesktop ? (active === index ? 1 : 0) : 1,
+                                        transition: "height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease",
+
+                                    }}
                                 >
-                                    <div className="max-[992px]:mt-3 relative z-2">
-                                        <Link href={"/detail"} aria-label={`Learn more about ${project.title}`}>
-                                            <div className=" min-[992px]:p-5 p-4 bg-black/0 rounded-[31px] inline-flex justify-center items-center gap-2.5 w-auto"
-                                                style={{
-                                                    boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45'
-                                                }}>
-                                                <div className="flex items-center gap-2 text-white text-base font-bold leading-5" >
-                                                    Learn more <FaArrowRightLong />
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </div>
-
-                                    <div className="grid grid-cols-[2.0fr_1.0fr] max-[768px]:grid-cols-1 projects_showcase gap-6 mt-3 projects_img relative z-2">
-                                        {project.images.map((img, i) => {
-                                            const isVideo = img.endsWith(".webm") || img.endsWith(".mp4");
-
-                                            return (
+                                    <div
+                                        ref={(el) => (itemRefs.current[index] = el)}
+                                        className="projects_image relative flex flex-col max-[992px]:flex-col-reverse mt-6"
+                                    >
+                                        <div className="max-[992px]:mt-3 relative z-2 min-[768px]:hidden">
+                                            <Link href={`/detail/${project.slug}`} aria-label={`Learn more about ${project.title}`}>
                                                 <div
-                                                    key={i}
-                                                    className={`relative h-fit p-2 
-          ${i === 1 ? "max-[768px]:hidden" : ""}
-          min-[1400px]:rounded-[40px] 
-          min-[1200px]:rounded-[34px] 
-          min-[992px]:rounded-[30px] 
-          max-[992px]:rounded-[28px]`}
+                                                    className="min-[992px]:p-5 p-4 bg-black/0 rounded-[31px] inline-flex justify-center items-center gap-2.5 w-auto"
                                                     style={{
-                                                        boxShadow:
-                                                            "0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45",
+                                                        boxShadow: "0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45",
                                                     }}
                                                 >
-                                                    {isVideo ? (
-                                                        <video
-                                                            src={img}
-                                                            autoPlay
-                                                            muted
-                                                            loop
-                                                            playsInline
-                                                            className="w-full h-full object-cover rounded-4xl"
-                                                        />
-                                                    ) : (
-                                                        <Image
-                                                            src={img}
-                                                            alt=""
-                                                            fill
-                                                            className="object-cover rounded-lg h-full"
-                                                        />
-                                                    )}
+                                                    <div className="flex items-center gap-2 text-white text-base font-bold leading-5">
+                                                        Learn more <FaArrowRightLong />
+                                                    </div>
                                                 </div>
-                                            );
-                                        })}
+                                            </Link>
+                                        </div>
+
+                                        <div className="grid grid-cols-[2.0fr_1.0fr] max-[768px]:grid-cols-1 projects_showcase gap-6 mt-3 projects_img relative z-2">
+                                            {project.images.map((img, i) => {
+                                                const isVideo = img.endsWith(".webm") || img.endsWith(".mp4");
+                                                return (
+                                                    <div
+                                                        key={i}
+                                                        className={`relative h-fit p-2 ${i === 1 ? "max-[768px]:hidden" : ""} min-[1400px]:rounded-[40px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[28px]`}
+                                                        style={{
+                                                            boxShadow: "0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45",
+                                                        }}
+                                                    >
+                                                        {isVideo ? (
+                                                            <video src={img} autoPlay muted loop playsInline className="w-full h-full object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px]" />
+                                                        ) : (
+                                                            <Image src={img} alt="" fill className="object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px] h-full" />
+                                                        )}
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
                                     </div>
 
                                     <div className="inner-projects-circle-1 blur-circle"></div>
                                     <div className="inner-projects-circle-2 blur-circle"></div>
                                     <div className="inner-projects-circle-3 blur-circle max-[992px]:hidden"></div>
                                 </div>
-
                             </div>
+
                         </div>
                     ))}
                 </div>
-
-                {/* <div className="projects-circle-1"></div> */}
 
             </section>
 
             <section className="clients_feedback relative pb-15 min-[992px]:px-[87px] px-10 max-[576px]:px-6">
                 <div className="container max-w-full z-1 relative">
                     <div className="p-4 bg-black/0 rounded-[40px] inline-flex justify-center items-center gap-2.5" style={{
-                        boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45'
+                        boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45', background: "#14050538"
                     }}>
                         <div className="justify-start text-white font-bold font-['Inter'] leading-5">Client Feedback</div>
                     </div>

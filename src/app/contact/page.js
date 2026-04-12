@@ -102,7 +102,7 @@ const page = () => {
                       <li className='mt-[28px] relative'>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d447.8671423111672!2d-122.89381636179313!3d49.13615273799861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5485d95df59639d7%3A0x47e1c8d2abb824fb!2s11902%2073a%20Ave%2C%20Delta%2C%20BC%20V4C%201C9%2C%20Canada!5e1!3m2!1sen!2sin!4v1774791814380!5m2!1sen!2sin" height="350" style={{ border: 0, mixBlendMode: 'diffusion' }} allowFullScreen="" loading="lazy" className="w-full rounded-[10px]" referrerPolicy="no-referrer-when-downgrade"></iframe>
 
-                        <div className='absolute map_overlay top-0 left-0 w-full h-full rounded-[10px]'></div>
+                        {/* <div className='absolute map_overlay top-0 left-0 w-full h-full rounded-[10px]'></div> */}
                       </li>
                     </ul>
                   </div>
@@ -124,7 +124,7 @@ const page = () => {
                         </div>
                         <div className=''>
                           <label htmlFor='number' className='text-[14px] font-semibold block'>Phone Number</label>
-                          <input type='number' className='bg-white h-[48px] rounded-2xl w-full mt-2 ps-4' placeholder='+91 98765 43210' id='number' />
+                          <input type='number' className='bg-white h-[48px] rounded-2xl w-full mt-2 ps-4' placeholder='+1 2366326560' id='number' />
                         </div>
                       </div>
                       <div className='mt-7'>

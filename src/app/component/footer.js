@@ -13,18 +13,17 @@ const Footer = () => {
         <div className="footer_bg bottom-0 w-full">
             <footer className='self-stretch min-[992px]:px-[87px] px-10 max-[576px]:px-6 relative overflow-hidden footer_section py-10 '>
                 <div className='container max-w-full '>
-                    <div className='min-[1400px]:p-16 p-12 max-[576px]:p-5 bg-black/0 rounded-[40px] footer_wrapper'>
+                    <div className='min-[1400px]:p-16 p-12 max-[576px]:p-5 max-[768px]:p-8 bg-black/0 rounded-[40px] footer_wrapper'>
                         <div className="grid grid-cols-1 min-[1230px]:grid-cols-[1.8fr_1.2fr] justify-between items-center gap-7 min-[1200px]:gap-10" >
                             <div className="">
                                 <div className="justify-start text-white max-[576px]:text-4xl text-5xl min-[780px]:text-6xl min-[1200px]:text-[60px] min-[1530px]:text-7xl font-normal font-['Michroma'] max-[576px]:leading-[53px]">Stay in the loop</div>
                                 <div className="self-stretch justify-start mt-3 text-white text-lg font-medium font-['Inter'] leading-7">Get insights delivered straight to your inbox</div>
                             </div>
                             <div className="">
-                                <div className="flex justify-start min-[1230px]:justify-end items-center gap-2 max-[576px]:flex-col max-[576px]:items-start">
-                                    <input type="text" className="form-control ps-3 w-88 px-3 py-2 bg-Opacity-Transparent/0 rounded-[56px] max-[576px]:w-full outline-1 outline-white h-15" name="" id=""
-                                        aria-describedby="helpId" placeholder="Your email" />
+                                <div className="flex justify-start min-[1230px]:justify-end items-center gap-2 ">
+                                    <input type="text" className="form-control ps-3 w-88 px-3 py-2 bg-Opacity-Transparent/0 rounded-[56px]  outline-1 outline-white h-15 max-[480px]:w-1/2" name="" id="" aria-describedby="helpId" placeholder="Your email" />
                                     <button className="main_btn">
-                                        <Image src="/getInTouch_btn.svg" alt="Get in touch" width={137} height={62} className="relative w-full" />
+                                        <Image src="/getInTouch_btn.svg" alt="Get in touch" width={137} height={62} className="relative w-full h-full" />
                                     </button>
                                 </div>
                                 <p className='text-white text-start min-[1230px]:text-end mt-3'>We respect your privacy. Unsubscribe anytime.</p>
