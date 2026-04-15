@@ -24,12 +24,12 @@ const Navbar = () => {
 
     return (
         <>
-            <section className="hero-banner fixed w-full min-[1400px]:px-[87px] px-14 max-[768px]:px-8 z-6">
+            <section className="hero-banner fixed w-full min-[992px]:px-[87px] px-10 max-[576px]:px-6 z-6">
                 <div className="container max-w-full">
                     <div className="link_section rounded-[123px]">
                         <div className="flex min-[992px]:justify-start justify-between items-center gap-6">
                             <Link href="/" className="logo">
-                                <Image src="/main_logo.svg" alt="Skynetech" width={200} height={80} className="relative" />
+                                <Image src="/main_logo.svg" alt="Skynetech" width={200} height={80} className="relative max-[576px]:w-[140px]" />
                             </Link>
 
                             <ul className="flex-1 max-[992px]:hidden flex justify-center items-center gap-12 m-0 p-0">
@@ -63,14 +63,13 @@ const Navbar = () => {
                             </Link>
                             
                             <div className="min-[992px]:hidden cursor-pointer" onClick={() => setOpen(true)}>
-                                <FaBarsStaggered size={28}/>
+                                <FaBarsStaggered size={24} fill="#fff"/>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Blur background */}
             {open && (
                 <div
                     className="fixed inset-0 backdrop-blur-md bg-black/40 z-40"
@@ -78,7 +77,6 @@ const Navbar = () => {
                 ></div>
             )}
 
-            {/* Sidebar */}
             <div className={`fixed top-0 right-0 h-full w-[300px] bg-[#111] z-50 transform transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"}`}>
                 
                 <div className="flex justify-end p-6">
@@ -102,15 +100,15 @@ const Navbar = () => {
                         <Link href="/portfolio" onClick={() => setOpen(false)}>Portfolio</Link>
                     </li>
 
-                    <li>
+                   {/*  <li>
                         <Link href="/services" onClick={() => setOpen(false)}>Services</Link>
-                    </li>
+                    </li> */}
                 </ul>
 
                 <div className="px-8 mt-10">
-                    <button className="main_btn w-full">
+                    <Link href={'/contact'} className="main_btn w-full" onClick={() => setOpen(false)}>
                         <Image src="/getInTouch_btn.svg" alt="Get in touch" width={130} height={50} />
-                    </button>
+                    </Link>
                 </div>
             </div>
         </>

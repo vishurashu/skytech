@@ -24,6 +24,8 @@ body {
   height: auto;
   scroll-behavior: smooth;
   position: relative;
+  overflow-x: hidden;
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23E30613" d="M4.5.79v22.42l6.56-6.57h9.29L4.5.79z"></path></svg>') 0 0, auto;
 }
 
 * {
@@ -90,6 +92,11 @@ h6 .heading {
 
 .spline_overlay2 {
   height: 76px;
+  background: linear-gradient(180deg, rgba(1, 1, 1, 0) 0%, #010101 100%);
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  left: 0;
 }
 
 .services,
@@ -103,6 +110,12 @@ h6 .heading {
 
 .hero-banner {
   top: 30px;
+}
+
+@media (max-width:576px){
+  .hero-banner {
+    top: 15px;
+  }
 }
 
 .link_section {
@@ -210,6 +223,10 @@ input {
   height: auto !important;
   position: relative !important;
 }
+
+/* .projet-mockups:nth-of-type(2){
+  height: fit-content;
+} */
 
 .promotion {
   backdrop-filter: blur(15px);
@@ -506,9 +523,9 @@ input {
   width: 120px;
   height: 120px;
   position: absolute;
-  top: 730px;
+  top: 100%;
   left: 10%;
-  box-shadow: 0 0 46.44px #ffa4a4, 0 0 92.88px #d20000, 0 0 250px #ffa4a4, 0 0 250px #ffa4a4, 0 0 250px #ffa4a400;
+  box-shadow: 0 0 46.44px #9f0808, 0 0 92.88px #d20000, 0 0 250px #ffa4a4, 0 0 250px #ffa4a4, 0 0 250px #ffa4a400;
 }
 
 @media (max-width:1400px) {
@@ -608,7 +625,7 @@ input {
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 13px #00000075, inset 0 1px #e3061399, inset 0 -1px #ffffff38, inset -2px 0 #e3061399, inset 7px 7px 10px rgba(0, 0, 0, 0.197), inset -7px -7px 10px rgba(0, 0, 0, 0.197);
-  background: #01010133;
+  background: #14050538;
 }
 
 .feedback_class::before {
@@ -693,7 +710,7 @@ input {
 .inner-projects-circle-2 {
   opacity: 1;
   mix-blend-mode: hard-light;
-  filter: blur(15px);
+  filter: blur(35px);
   background: #e30613;
   border-radius: 257px;
   width: 180px;
@@ -701,13 +718,13 @@ input {
   position: absolute;
   bottom: -120px;
   left: -110px;
-  box-shadow: 0 0 46.44px #ffa4a4, 0 0 92.88px #d20000, 0 0 250px #ffa4a4, 0 0 250px #ffa4a4, 0 0 250px #ffa4a400;
+  box-shadow: 0 0 46.44px #e30613, 0 0 92.88px #d20000, 0 0 250px #ffa4a4, 0 0 250px #850404, 0 0 250px #ffa4a400;
 }
 
 .inner-projects-circle-3 {
   opacity: 1;
   mix-blend-mode: hard-light;
-  filter: blur(15px);
+  filter: blur(35px);
   background: #e30613;
   border-radius: 257px;
   width: 180px;
@@ -715,7 +732,7 @@ input {
   position: absolute;
   bottom: -190px;
   right: 110px;
-  box-shadow: 0 0 46.44px #ffa4a4, 0 0 92.88px #d20000, 0 0 250px #ffa4a4, 0 0 250px #ffa4a4, 0 0 250px #ffa4a400;
+  box-shadow: 0 0 46.44px #e30613, 0 0 92.88px #d20000, 0 0 250px #ffa4a4, 0 0 250px #850404, 0 0 250px #ffa4a400;
 }
 
 @media (max-width:768px) {
@@ -740,7 +757,7 @@ input {
 
   .services-circle-2 {
     top: 960px;
-    right: 0;
+    right: 30px;
   }
 
   .fade-left,
@@ -960,7 +977,7 @@ input {
 
 .contact_form input,
 .contact_form textarea {
-  color: #9CA3AF !important;
+  color: #333333 !important;
 }
 
 select {
@@ -970,4 +987,12 @@ select {
 
 .blur-circle {
   will-change: transform;
+}
+
+.splide__list {
+  transition: none !important;
+}
+
+.splide__track {
+  overflow: hidden;
 }
