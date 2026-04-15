@@ -118,7 +118,7 @@ const page = () => {
         <div className='circle-5 blur-circle max-[1400px]:hidden'></div>
       </section>
 
-      <section className='company_about z-[-1] mt-0 pb-16 relative min-[992px]:px-[87px] px-10 max-[576px]:px-6'>
+      <section className='company_about mt-0 pb-16 relative min-[992px]:px-[87px] px-10 max-[576px]:px-6'>
         <div className="container max-w-full">
           <div className='grid min-[1350px]:grid-cols-2 grid-cols-1 gap-6'>
             <div>
@@ -173,6 +173,8 @@ const page = () => {
         <div className='company-about-circle-4 blur-circle'></div>
         <div className='company-about-circle-5 blur-circle'></div>
         <div className='company-about-circle-6 blur-circle max-[1400px]:hidden'></div>
+        <div className="company-about-circle-7 blur-circle max-[768px]:hidden"></div>
+        {/* <div className="company-about-circle-8 blur-circle max-[768px]:hidden"></div> */}
       </section>
 
     </main>
