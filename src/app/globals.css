@@ -996,3 +996,16 @@ select {
 .splide__track {
   overflow: hidden;
 }
+
+.scroll{
+  background: linear-gradient(180deg, #6e151b 8%, #ab141e 100%);
+  bottom: 20px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: "0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45",
+}

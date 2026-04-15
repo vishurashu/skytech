@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link';
 
 export const metadata = {
   title: "About Us",
@@ -122,7 +123,7 @@ const page = () => {
           <div className='grid min-[1350px]:grid-cols-2 grid-cols-1 gap-6'>
             <div>
               <div className="justify-start min-[1620px]:w-[709px] min-[970px]:text-7xl max-[969px]:text-6xl max-[768px]:text-5xl max-[576px]:text-4xl font-normal font-['Michroma'] leading-[88px] max-[576px]:leading-[55px]">Design Thinking</div>
-              <p className="w-full min-[1400px]:w-[821px] justify-start text-white font-bold leading-5 mt-[25px] max-[576px]:mt-2">At SKYNETECH, our work is driven by design, powered by technology, and focused on solving real problems. We combine creativity, strategy, and development to build digital experiences that are modern, scalable, and impactful.</p>
+              <p className="w-full min-[1560px]:pr-10 justify-start text-white font-bold leading-5 mt-[25px] max-[576px]:mt-2">At SKYNETECH, our work is driven by design, powered by technology, and focused on solving real problems. We combine creativity, strategy, and development to build digital experiences that are modern, scalable, and impactful.</p>
 
               <Image src="/discussion.png" alt='Discussion' width={821} height={527} className='mt-[25px] z-1 relative max-[1400px]:w-full' />
             </div>
@@ -145,7 +146,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className='pt-20'>
+        <div className='pt-20 z-5'>
           <div className="statistics relative z-2">
             <div className="container max-w-full">
               <div className="grid grid-cols-1">
@@ -157,9 +158,9 @@ const page = () => {
                     <p className="text-white text-lg leading-7 mt-2 max-[576px]:text-base">Let's work together to create something impactful.</p>
                   </div>
 
-                  <button>
-                    <img src="/getinTouch_2.svg" alt="Get in Touch" width="137" height="62" />
-                  </button>
+                  <Link href={'/contact'} aria-label="Get in Touch">
+                    <img src="/getinTouch_2.svg" alt="Get in Touch" width={137} height={62}/>
+                  </Link>
                 </div>
               </div>
             </div>

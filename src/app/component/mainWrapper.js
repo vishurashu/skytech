@@ -2,15 +2,17 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { ReactLenis, useLenis  } from "lenis/react";
+import { ReactLenis, useLenis } from "lenis/react";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import Loader from "./loader";
+import { FaLongArrowAltUp } from "react-icons/fa";
 
 export default function mainWrapper({ children }) {
     const pathname = usePathname();
     const lenis = useLenis();
     const [showLoader, setShowLoader] = useState(pathname === "/");
+    const [showScroll, setShowScroll] = useState(false);
 
     useEffect(() => {
         if (pathname === "/") {
@@ -29,6 +31,25 @@ export default function mainWrapper({ children }) {
             window.history.scrollRestoration = "manual";
         }
     }, []);
+
+    // Show button after 400px scroll
+    useEffect(() => {
+        const handleScroll = () => {
+            setShowScroll(window.scrollY > 400);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    // Scroll to top using Lenis smooth scroll
+    const scrollToTop = () => {
+        if (lenis) {
+            lenis.scrollTo(0, { duration: 1.5, easing: (t) => 1 - Math.pow(1 - t, 4) });
+        } else {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    };
 
     useEffect(() => {
         let currentX = 0, currentY = 0;
@@ -74,8 +95,19 @@ export default function mainWrapper({ children }) {
                 <Navbar />
                 {children}
                 <Footer />
-            </ReactLenis>
 
+                <button
+                    onClick={scrollToTop}
+                    className={`scroll fixed bottom-8 right-8 z-50 cursor-pointer p-3 rounded-full transition-all duration-500 ${
+                        showScroll 
+                            ? "opacity-100 translate-y-0 pointer-events-auto" 
+                            : "opacity-0 translate-y-4 pointer-events-none"
+                    }`}
+                    aria-label="Scroll to top"
+                >
+                    <FaLongArrowAltUp size={22} color="#fff" />
+                </button>
+            </ReactLenis>
         </>
     );
 }

@@ -18,13 +18,12 @@ export default function Loader({ onFinish }) {
       if (current >= 100) {
         clearInterval(interval);
 
-        // Force 100 to render instantly, then slide
         if (numberRef.current) numberRef.current.textContent = "100";
 
-        setTimeout(() => setSlideUp(true), 50);   // near-instant slide start
-        setTimeout(() => onFinish?.(), 850);        // after slide completes
+        setTimeout(() => setSlideUp(true), 50);   
+        setTimeout(() => onFinish?.(), 850);       
       }
-    }, 20);
+    }, 30);
 
     return () => clearInterval(interval);
   }, [onFinish]);
