@@ -100,7 +100,7 @@ h6 .heading {
 }
 
 .services,
-.feedback-bg {
+.feedback-bg, .terms-bg, .terms_bg {
   background: linear-gradient(180deg, #270000 0%, black 100%);
 }
 
@@ -1037,4 +1037,19 @@ select {
   align-items: center;
   justify-content: center;
   box-shadow: "0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45",
+}
+
+.terms-circle-1 {
+  opacity: .76;
+  mix-blend-mode: hard-light;
+  /* z-index: -1; */
+  filter: blur(15px);
+  background: #e30613;
+  border-radius: 257px;
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  bottom: -110px;
+  left: 36%;
+  box-shadow: 0 0 46.44px #ffa4a4, 0 0 92.88px #d20000, 0 0 250px #ffa4a4, 0 0 250px #ffa4a4, 0 0 250px #ffa4a400;
 }

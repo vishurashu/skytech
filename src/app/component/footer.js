@@ -10,7 +10,7 @@ const Footer = () => {
     const pathname = usePathname();
 
     return (
-        <div className="footer_bg bottom-0 w-full">
+        <div className="footer_bg bottom-0 w-full z-2 relative">
             <footer className='self-stretch min-[992px]:px-[87px] px-10 max-[576px]:px-6 relative overflow-hidden footer_section py-10 '>
                 <div className='container max-w-full '>
                     <div className='min-[1400px]:p-16 p-12 max-[576px]:p-5 max-[768px]:p-8 bg-black/0 rounded-[40px] footer_wrapper'>
@@ -60,13 +60,13 @@ const Footer = () => {
                                     </li>
 
                                     <li>
-                                        <Link href="/" className={`text-white text-decoration-none ${pathname === "/terms" ? "active" : ""}`}>
+                                        <Link href="/terms" className={`text-white text-decoration-none ${pathname === "/terms" ? "active" : ""}`}>
                                             Terms
                                         </Link>
                                     </li>
 
                                     <li>
-                                        <Link href="/" className={`text-white text-decoration-none ${pathname === "/privacy-policy" ? "active" : ""}`}>
+                                        <Link href="/privacy" className={`text-white text-decoration-none ${pathname === "/privacy" ? "active" : ""}`}>
                                             Privacy Policy
                                         </Link>
                                     </li>
