@@ -322,6 +322,8 @@ export default function Home() {
         <div className="spline_overlay2 absolute"></div>
       </section>
 
+      {/* <div></div> */}
+
       <section className="homeBg pt-20 max-[576px]:pt-14">
         <section className="about_us pb-20 relative min-[992px]:px-[87px] px-10 max-[576px]:px-6">
           <div className="container relative max-w-full">
