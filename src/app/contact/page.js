@@ -16,25 +16,25 @@ const page = () => {
   const feedback = [
     {
       review: 'Working with SKYNETECH completely transformed our online presence. Their team delivered a modern website and a strong brand identity that truly represents our business.',
-      img: '/client-1.png',
+      img: '/client-1.webp',
       name: 'Amit Sharma',
       profession: 'Startup Founder'
     },
     {
       review: 'The SKYNETECH team understands design and technology extremely well. They built our platform with great performance and a clean user experience.',
-      img: '/client-2.png',
+      img: '/client-2.webp',
       name: 'Sarah Johnson',
       profession: 'Product Manager'
     },
     {
       review: 'From branding to development, the process was smooth and professional. SKYNETECH helped us launch a digital product that our users love.',
-      img: '/client-3.png',
+      img: '/client-3.webp',
       name: 'Daniel Carter',
       profession: 'Business Owner'
     },
     {
       review: 'Their creativity and technical expertise helped elevate our brand. The final result exceeded our expectations.',
-      img: '/client-4.png',
+      img: '/client-4.webp',
       name: 'Priya Mehta',
       profession: 'Marketing Director'
     },
@@ -43,7 +43,7 @@ const page = () => {
   return (
     <main className='relative wholeBg'>
       <section className="header_banner relative">
-        <Image src="/serviceHero.png" alt="Contact SKYNETECH digital agency" width={1920} height={650} priority className='w-full h-full object-cover max-[1300px]:h-[450px]' />
+        <Image src="/serviceHero.webp" alt="Contact SKYNETECH digital agency" width={1920} height={650} priority className='w-full h-full object-cover max-[1300px]:h-[450px]' />
 
         <div className='absolute bottom-0 w-full min-[1400px]:pb-20 min-[992px]:pb-14 pb-8 min-[992px]:px-[87px] px-10 max-[576px]:px-6'>
           <div className='container max-w-full'>

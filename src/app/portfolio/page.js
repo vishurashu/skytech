@@ -21,8 +21,8 @@ const page = () => {
             services: ["Branding", "Web Design", "Web Development", "Strategy", "UI"],
             location: "US",
             images: [
-                "/project_1.png",
-                "/project_2.png",
+                "/project_1.webp",
+                "/project_2.webp",
             ],
         },
         {
@@ -39,8 +39,8 @@ const page = () => {
             ],
             location: "US",
             images: [
-                "/heimdall-1.png",
-                "/heimdall-2.png",
+                "/heimdall-1.webp",
+                "/heimdall-2.webp",
             ],
         },
         {
@@ -52,7 +52,7 @@ const page = () => {
             location: "US",
             images: [
                 "/cula-1.mp4",
-                "/cula-2.png",
+                "/cula-2.webp",
             ],
         },
         {
@@ -70,7 +70,7 @@ const page = () => {
             location: "US",
             images: [
                 "/arqitel-1.mp4",
-                "/arqitel-2.png",
+                "/arqitel-2.webp",
             ],
         },
     ];
@@ -78,25 +78,25 @@ const page = () => {
     const feedback = [
         {
             review: 'Working with SKYNETECH completely transformed our online presence. Their team delivered a modern website and a strong brand identity that truly represents our business.',
-            img: '/client-1.png',
+            img: '/client-1.webp',
             name: 'Amit Sharma',
             profession: 'Startup Founder'
         },
         {
             review: 'The SKYNETECH team understands design and technology extremely well. They built our platform with great performance and a clean user experience.',
-            img: '/client-2.png',
+            img: '/client-2.webp',
             name: 'Sarah Johnson',
             profession: 'Product Manager'
         },
         {
             review: 'From branding to development, the process was smooth and professional. SKYNETECH helped us launch a digital product that our users love.',
-            img: '/client-3.png',
+            img: '/client-3.webp',
             name: 'Daniel Carter',
             profession: 'Business Owner'
         },
         {
             review: 'Their creativity and technical expertise helped elevate our brand. The final result exceeded our expectations.',
-            img: '/client-4.png',
+            img: '/client-4.webp',
             name: 'Priya Mehta',
             profession: 'Marketing Director'
         },
@@ -158,7 +158,7 @@ const page = () => {
     return (
         <main className='relative wholeBg'>
             <section className="header_banner relative">
-                <Image src="/portfolioHero.png" alt="SKYNETECH portfolio showcase" width={1920} height={650} priority className='w-full h-full object-cover max-[1300px]:h-[450px]' />
+                <Image src="/portfolioHero.webp" alt="SKYNETECH portfolio showcase" width={1920} height={650} priority className='w-full h-full object-cover max-[1300px]:h-[450px]' />
 
                 <div className='absolute bottom-0 w-full min-[1400px]:pb-10 pb-8 min-[992px]:px-[87px] px-10 max-[576px]:px-6'>
                     <div className='container max-w-full'>

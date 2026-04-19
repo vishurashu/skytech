@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Script from "next/script";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -10,11 +10,17 @@ import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import "@splidejs/splide/dist/css/splide.min.css";
 import { useRouter } from "next/navigation";
 
+const Spline = dynamic(() => import("@splinetool/react-spline"), {
+  ssr: false,
+  loading: () => <div className="h-[600px] flex items-center justify-center text-white">Loading 3D preview…</div>,
+});
+
 export default function Home() {
 
   const [active, setActive] = useState(null);
   const [isDesktop, setIsDesktop] = useState(false);
-  const [canLoadSpline, setCanLoadSpline] = useState(false);
+  const [splineVisible, setSplineVisible] = useState(false);
+  const splineContainerRef = useRef(null);
 
   useEffect(() => {
     const checkScreen = () => {
@@ -24,16 +30,32 @@ export default function Home() {
     checkScreen();
     window.addEventListener("resize", checkScreen);
 
-    // Defer heavy Spline loading to improve PageSpeed score
-    const timer = setTimeout(() => {
-      setCanLoadSpline(true);
-    }, 2000);
-
     return () => {
       window.removeEventListener("resize", checkScreen);
-      clearTimeout(timer);
     };
   }, []);
+
+  useEffect(() => {
+    if (!splineContainerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setSplineVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        rootMargin: "200px",
+      }
+    );
+
+    observer.observe(splineContainerRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [splineContainerRef.current]);
 
 
   const about = [
@@ -132,8 +154,8 @@ export default function Home() {
       services: ["Branding", "Web Design", "Web Development", "Strategy", "UI"],
       location: "US",
       images: [
-        "/project_1.png",
-        "/project_2.png",
+        "/project_1.webp",
+        "/project_2.webp",
       ],
     },
     {
@@ -150,8 +172,8 @@ export default function Home() {
       ],
       location: "US",
       images: [
-        "/heimdall-1.png",
-        "/heimdall-2.png",
+        "/heimdall-1.webp",
+        "/heimdall-2.webp",
       ],
     },
     {
@@ -163,7 +185,7 @@ export default function Home() {
       location: "US",
       images: [
         "/cula-1.mp4",
-        "/cula-2.png",
+        "/cula-2.webp",
       ],
     },
     {
@@ -181,7 +203,7 @@ export default function Home() {
       location: "US",
       images: [
         "/arqitel-1.mp4",
-        "/arqitel-2.png",
+        "/arqitel-2.webp",
       ],
     },
   ];
@@ -189,25 +211,25 @@ export default function Home() {
   const feedback = [
     {
       review: 'Working with SKYNETECH completely transformed our online presence. Their team delivered a modern website and a strong brand identity that truly represents our business.',
-      img: '/client-1.png',
+      img: '/client-1.webp',
       name: 'Amit Sharma',
       profession: 'Startup Founder'
     },
     {
       review: 'The SKYNETECH team understands design and technology extremely well. They built our platform with great performance and a clean user experience.',
-      img: '/client-2.png',
+      img: '/client-2.webp',
       name: 'Sarah Johnson',
       profession: 'Product Manager'
     },
     {
       review: 'From branding to development, the process was smooth and professional. SKYNETECH helped us launch a digital product that our users love.',
-      img: '/client-3.png',
+      img: '/client-3.webp',
       name: 'Daniel Carter',
       profession: 'Business Owner'
     },
     {
       review: 'Their creativity and technical expertise helped elevate our brand. The final result exceeded our expectations.',
-      img: '/client-4.png',
+      img: '/client-4.webp',
       name: 'Priya Mehta',
       profession: 'Marketing Director'
     },
@@ -292,18 +314,9 @@ export default function Home() {
   return (
     <main className="relative">
       <section className="header_banner relative max-[768px]:mt-[100px] max-[576px]:mt-[70px]">
-        <div className="max-[600px]:hidden">
-          {canLoadSpline && (
-            <>
-              <Script
-                type="module"
-                src="https://unpkg.com/@splinetool/viewer@1.12.69/build/spline-viewer.js"
-                strategy="lazyOnload"
-              />
-              <spline-viewer
-                url="https://prod.spline.design/6PPzV2EcRbTTLY32/scene.splinecode"
-              ></spline-viewer>
-            </>
+        <div className="max-[600px]:hidden" ref={splineContainerRef}>
+          {splineVisible && (
+            <Spline scene="https://prod.spline.design/6PPzV2EcRbTTLY32/scene.splinecode" />
           )}
         </div>
 
@@ -337,8 +350,8 @@ export default function Home() {
 
             <div className="grid  min-[1300px]:grid-cols-[2.2fr_0.8fr]  gap-4 mt-10 z-1 relative">
               <div>
-                <img src="/about_us.webp" alt="About us" width={1305} height={706} className="w-full max-[600px]:hidden" />
-                <img src="/about_us1.webp" alt="About us" width={934} height={706} className="w-full min-[600px]:hidden" />
+                <img src="/about_us.webp" alt="About us" width={1305} height={706} className="w-full max-[600px]:hidden" loading="lazy" />
+                <img src="/about_us1.webp" alt="About us" width={934} height={706} className="w-full min-[600px]:hidden" loading="lazy" />
               </div>
               <div className="max-[1100px]:grid  grid-rows-3 max-[1100px]:gap-y-5 gap-4 flex flex-col">
                 {about.map((item, index) => (

@@ -68,7 +68,7 @@ const page = () => {
   return (
     <main className='relative wholeBg'>
       <section className="header_banner relative">
-        <Image src="/aboutHero.png" alt="About SKYNETECH digital agency" width={1920} height={1080} priority className='w-full h-full object-cover max-[1100px]:h-[600px]' />
+        <Image src="/aboutHero.webp" alt="About SKYNETECH digital agency" width={1920} height={1080} priority className='w-full h-full object-cover max-[1100px]:h-[600px]' />
 
         <div className='absolute bottom-0 w-full min-[1400px]:pb-20 min-[992px]:pb-10 pb-6 min-[992px]:px-[87px] px-10 max-[576px]:px-6'>
           <div className='container max-w-full'>
@@ -105,9 +105,9 @@ const page = () => {
           </div>
 
           <div className='relative'>
-            <Image src="/aboutMain.png" alt="About us" width={1920} height={1080} className='w-full h-full object-cover max-[800px]:hidden' />
-            <Image src="/aboutMain1.png" alt="About us" width={863} height={624} className='w-full h-full object-cover min-[800px]:hidden' />
-            <Image src="/glass_ball.png" alt="About us" width={114} height={114} className='absolute top-[131px] w-auto left-[-40px] max-[1100px]:h-[100px] max-[992px]:h-[80px] max-[992px]:top-[100px] max-[768px]:h-[70px] max-[768px]:top-[80px] max-[768px]:left-[-20px] max-[576px]:h-[50px] max-[576px]:top-[60px] max-[576px]:left-[-10px]' />
+            <Image src="/aboutMain.webp" alt="About us" width={1920} height={1080} className='w-full h-full object-cover max-[800px]:hidden' />
+            <Image src="/aboutMain1.webp" alt="About us" width={863} height={624} className='w-full h-full object-cover min-[800px]:hidden' />
+            <Image src="/glass_ball.webp" alt="About us" width={114} height={114} className='absolute top-[131px] w-auto left-[-40px] max-[1100px]:h-[100px] max-[992px]:h-[80px] max-[992px]:top-[100px] max-[768px]:h-[70px] max-[768px]:top-[80px] max-[768px]:left-[-20px] max-[576px]:h-[50px] max-[576px]:top-[60px] max-[576px]:left-[-10px]' />
           </div>
         </div>
 
@@ -125,7 +125,7 @@ const page = () => {
               <div className="justify-start min-[1620px]:w-[709px] min-[970px]:text-7xl max-[969px]:text-6xl max-[768px]:text-5xl max-[576px]:text-4xl font-normal font-['Michroma'] leading-[88px] max-[576px]:leading-[55px] text-white">Design Thinking</div>
               <p className="w-full min-[1560px]:pr-10 justify-start text-white font-bold leading-5 mt-[25px] max-[576px]:mt-2">At SKYNETECH, our work is driven by design, powered by technology, and focused on solving real problems. We combine creativity, strategy, and development to build digital experiences that are modern, scalable, and impactful.</p>
 
-              <Image src="/discussion.png" alt='Discussion' width={821} height={527} className='mt-[25px] z-1 relative max-[1400px]:w-full' />
+              <Image src="/discussion.webp" alt='Discussion' width={821} height={527} className='mt-[25px] z-1 relative max-[1400px]:w-full' />
             </div>
             <div className='min-[1900px]:ml-[-30px]'>
               <div className='card rounded-2xl p-[10px]'>

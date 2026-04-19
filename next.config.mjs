@@ -2,9 +2,13 @@
 const nextConfig = {
   output: "export",
   images: {
-    unoptimized: true
-  }
+    formats: ["image/avif", "image/webp"],
+    unoptimized: true,
+  },
+  transpilePackages: ["@splinetool/react-spline", "@splinetool/runtime"],
+  experimental: {
+    esmExternals: "loose",
+  },
 };
 
 export default nextConfig;
-
